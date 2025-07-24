@@ -1,4 +1,4 @@
-## Hello World Program.
+## Arrays.
 ```c
 #include<stdio.h>
 int main()
