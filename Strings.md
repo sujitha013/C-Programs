@@ -241,7 +241,8 @@ int main()
       }
     printf("maximum number of characters in the string:%d",max);
     return 0;
-}```
+}
+```
 ##11.Write a C program to sort a string array in ascending order.
 ```c
 #include<stdio.h>
@@ -277,7 +278,8 @@ int main()
         printf("%s\n", str[i]);
     }
     return 0;
-}```
+}
+```
 ##12.Write a program in C to read a string from the keyboard and sort it using bubble sort.
 ```c
 
