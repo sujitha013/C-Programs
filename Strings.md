@@ -70,7 +70,8 @@ int main()
     }
     printf("Length of the string:%d",len);
     return 0;
-}```
+}
+```
 ##4.Write a program in C to separate individual characters from a string.
 #include<stdio.h>
 #include<string.h>
