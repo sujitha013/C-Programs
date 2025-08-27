@@ -38,8 +38,9 @@ for(i=size-1;i>=0;i--)
 printf("%d ",a[i]);
 }
 return 0;
-}```
-##3. Write a program in C to find the sum of all elements of the array
+}
+```
+##3.Write a program in C to find the sum of all elements of the array
 ```c
 #include<stdio.h>
 int main()
@@ -59,8 +60,9 @@ printf("%d ",a[i]);
 sum=sum+a[i];
 }
 printf("\nsum of all elements of the array=%d",sum);
-return 0;```
-##4. Write a program in C to copy the elements of one array into another array.
+return 0;
+```
+##4.Write a program in C to copy the elements of one array into another array.
 ```c#include<stdio.h>
 int main()
 {
@@ -84,8 +86,9 @@ for(i=0;i<size;i++)
 printf("%d ",b[i]);
 }
 return 0;
-}```
-##5. Write a program in C to count the total number of duplicate elements in an array.
+}
+```
+##5.Write a program in C to count the total number of duplicate elements in an array.
 ```c
 #include<stdio.h>
 int main()
@@ -130,7 +133,8 @@ int main()
     }
     printf("\nCount of duplicat elements in the array:%d",dupcount);
     return 0;
-}```
+}
+```
 ##6. Write a program in C to print all unique elements in an array.
 ```c
 #include<stdio.h>
