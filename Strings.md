@@ -282,4 +282,34 @@ int main()
 ```
 ##12.Write a program in C to read a string from the keyboard and sort it using bubble sort.
 ```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],temp;
+    int i,j,n;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    n=strlen(str);
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(str[j]>str[i])
+            {
+                temp=str[i];
+                str[i]=str[j];
+                str[j]=temp;
+            }
+        }
+    }
+    printf("\nSorted string:%s",str);
+    return 0;
+    
+}
+```
+##13.Write a program in C to extract a substring from a given string. 
+```c
+
 
