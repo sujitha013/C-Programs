@@ -73,7 +73,7 @@ int main()
 }
 ```
 ##4.Write a program in C to separate individual characters from a string.
-#include<stdio.h>
+```c#include<stdio.h>
 #include<string.h>
 int main()
 {
@@ -88,7 +88,8 @@ int main()
         printf("\n%c",str[i]);
     }
     return 0;
-}```
+}
+```
 ##5.Write a program in C to print individual characters of a string in reverse order.
 ```c
 #include<stdio.h>
@@ -107,7 +108,8 @@ int main()
         printf("\n%c",str[i]);
     }
     return 0;
-}```
+}
+```
 ##6.Write a program in C to count the total number of words in a string.
 ```c
 #include<stdio.h>
