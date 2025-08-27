@@ -63,7 +63,8 @@ printf("\nsum of all elements of the array=%d",sum);
 return 0;
 ```
 ##4.Write a program in C to copy the elements of one array into another array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
 int a[100],i,size,b[i];
