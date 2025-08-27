@@ -40,7 +40,8 @@ printf("%d ",a[i]);
 return 0;
 }```
 ##3. Write a program in C to find the sum of all elements of the array
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
 int a[100],i,size,sum=0;
@@ -83,9 +84,11 @@ for(i=0;i<size;i++)
 printf("%d ",b[i]);
 }
 return 0;
-} ```
+}
+```
 ##5. Write a program in C to count the total number of duplicate elements in an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,j,size,count,freq[100],dupcount=0;
@@ -128,9 +131,11 @@ int main()
     }
     printf("\nCount of duplicat elements in the array:%d",dupcount);
     return 0;
-}```
+}
+```
 ##6. Write a program in C to print all unique elements in an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,j,size,flag;
@@ -164,9 +169,11 @@ int main()
     }
 
     return 0;
-}```
+}
+```
 ##7. Write a program in C to merge two arrays of the same size sorted in descending order.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100], b[100], c[200];
@@ -204,9 +211,11 @@ int main()
         printf("%d ", c[i]);
 
     return 0;
-}```
+}
+```
 ##8. Write a  program in C to count the frequency of each element of an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,j,size,count,freq[100];
@@ -245,9 +254,11 @@ int main()
     }
 
     return 0;
-}```
+}
+```
 ##9. Write a program in C to find the maximum and minimum elements in an array
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],size,min,max,i;
@@ -272,9 +283,11 @@ int main()
     }
     printf("Maximum element=%d\nMinimum element=%d",max,min);
     return 0;
-}```
+}
+```
 ##10. Write a program in C to separate odd and even integers into separate arrays.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,odd[100],even[100],size;
@@ -309,9 +322,11 @@ int main()
     }
 
     return 0;
-}```
+}
+```
 ##11. Write a program in C to sort elements of an array in ascending order.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,j,temp,size;
@@ -340,9 +355,11 @@ int main()
         printf("%d ",a[i]);
     }
 return 0;
-}```
+}
+```
 ##12. Write a program in C to sort the elements of the array in descending order.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,j,temp,size;
@@ -371,9 +388,11 @@ int main()
         printf("%d ",a[i]);
     }
 return 0;
-}```
+}
+```
 ##13. Write a program in C to delete an element at a desired position from an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,pos,size;
@@ -407,9 +426,11 @@ int main()
         printf("%d ",a[i]);
     }
     return 0;
-}```
+}
+```
 ##14. Write a program in C to find the second largest element in an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 #include<limits.h>
 int main()
 {
@@ -447,9 +468,11 @@ int main()
         printf("\nsecond largest element=%d",secondmax);
     }
 return 0;
-}```
+}
+```
 ##15. Write a program in C to find the second smallest element in an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 #include<limits.h>
 int main()
 {
@@ -506,9 +529,11 @@ int main()
         printf("\n");
     }
     return 0;
-}```
+}
+```
 ##17. Write a program in C for adding two matrices of the same size.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -548,9 +573,11 @@ int main()
     printf("\n");
     }
     return 0;
-}```
+}
+```
 ##18. Write a program in C for the subtraction of two matrices.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -590,9 +617,11 @@ int main()
         printf("\n");
     }
 return 0;
-}```
+}
+```
 ##19. Write a program in C for the multiplication of two square matrices.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -639,9 +668,11 @@ int main()
         printf("\n");
     }
     return 0;
-}```
+}
+```
 ##20. Write a program in C to find the transpose of a given matrix.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -668,9 +699,11 @@ int main()
 
 
     return 0;
-}```
+}
+```
 ##21. Write a program in C to find the sum of the right diagonals of a matrix.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -697,9 +730,11 @@ int main()
     }
     printf("\nSum of right diagonal=%d",sum);
     return 0;
-}```
+}
+```
 ##22. Write a program in C to find the sum of the left diagonals of a matrix.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -726,9 +761,11 @@ int main()
     }
     printf("\nSum of left diagonal=%d",sum);
     return 0;
-}```
+}
+```
 ##23. Write a program in C to find the sum of rows and columns of a matrix.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -763,9 +800,11 @@ int main()
     }
 
     return 0;
-}```
+}
+```
 ##24. Write a program in C to print or display the lower triangular of a given matrix.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int n,i,j;
@@ -796,9 +835,11 @@ int main()
     }
 
     return 0;
-}```
+}
+```
 ##25. Write a program in C to print or display an upper triangular matrix.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int n,i,j;
@@ -829,9 +870,11 @@ int main()
     }
 
     return 0;
-}```
+}
+```
 ##27. Write a program in C to accept two matrices and check whether they are equal.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -867,9 +910,11 @@ int main()
     }
     printf("both matrices are equal.");
     return 0;
-}```
+}
+```
 ##28. Write a program in C to find the majority element of an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,j,freq[100],count,size;
@@ -908,9 +953,11 @@ int main()
     }
     printf("\nNot found such element.");
     return 0;
-}```
+}
+```
 ##29. Write a program in C to find the missing number in a given array. There are no duplicates in the list.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],size,i,total,miss,sum=0;
@@ -929,9 +976,11 @@ int main()
     miss=sum-total;
     printf("The missing number:%d",miss);
     return 0;
-}```
+}
+```
 ##30. Write a program in C to find the two repeating elements in a given array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],size,i,j,freq[100],count,found=0;
@@ -971,9 +1020,11 @@ int main()
         }
     }
 return 0;
-}```
+}
+```
 ##31. Write a program to check if a given element is present in an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],size,i,j,search;
@@ -996,9 +1047,11 @@ int main()
     }
     printf("Element %d is not present in the array.",search);
     return 0;
-}```
+}
+```
 ##32. Create a function to calculate the average of elements in an array
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 float avg_of_the_array(int[],int);
 int main()
 {
@@ -1025,9 +1078,11 @@ float avg_of_the_array(int a[],int size)
     }
     av=sum/(float)size;
     return av;
-}```
+}
+```
 ##33. Write a program to count the number of even and odd elements in an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],size,i,evencount=0,oddcount=0;
@@ -1052,9 +1107,11 @@ int main()
     printf("\nNumber of even elements:%d",evencount);
     printf("\nNumber of odd elements:%d",oddcount);
     return 0;
-}```
+}
+```
 ##34. Implement a function to reverse the elements of an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int reversearray(int[],int);
 int main()
 {
@@ -1083,9 +1140,11 @@ int reversearray(int a[],int size)
     {
         printf("%d ",a[i]);
     }
-}```
+}
+```
 ##35. Implement a function to delete an element at a specific position in an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int deleteposition(int[],int);
 int main()
 {
@@ -1120,9 +1179,11 @@ int deleteposition(int a[],int size)
     {
         printf("%d ",a[i]);
     }
-}```
+}
+```
 ## Write a function to find the product of all elements in an array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 long long productarray(int[],int);
 int main()
 {
@@ -1147,9 +1208,11 @@ long long productarray(int a[],int size)
         pod*=a[i];
     }
     return pod;
-}```
+}
+```
 ##37. Print Square of Array Elements in C.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 #include<math.h>
 int main()
 {
@@ -1171,9 +1234,11 @@ int main()
         printf("%d ",b[i]);
     }
     return 0;
-}```
+}
+```
 ##38. Print Ascii Values using Array in C
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     char a[100];
@@ -1224,9 +1289,11 @@ int main()
     }
     printf("Two elements whose sum is closest to zero:%d and %d\nsum=%d",e1,e2,minsum);
     return 0;
-}```
+}
+```
 ##40. C Program to Find Union and Intersection of Two Arrays
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 
 int main()
 {
@@ -1276,9 +1343,11 @@ int main()
     }
 
     return 0;
-}```
+}
+```
 ##41. C Program to Print all Non Repeated Elements in an Array
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,j,count,size,freq[100];
@@ -1315,9 +1384,11 @@ int main()
         }
     }
     return 0;
-}```
+}
+```
 ##42. Write a program to write all the elements of 2-D Array into !-D Array in row wise.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -1348,9 +1419,11 @@ int main()
 
 
     return 0;
-}```
+}
+```
 ##43. Write a program to write whether a matrix is symmetric or not
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int rows,cols;
@@ -1393,9 +1466,11 @@ int main()
     }
     printf("\nThe matrix is symmetric.");
     return 0;
-}```
+}
+```
 ##44. Write a program to check if elements of an array are distinct or not.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],freq[100],count,i,j,size;
@@ -1433,9 +1508,11 @@ int main()
     }
     printf("\nAll elements are distinct.");
     return 0;
-}```
+}
+```
 ##45.Write a program to remove duplicate elements from a sorted array.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[100],i,size,j=0;
@@ -1460,9 +1537,11 @@ int main()
         printf("%d ",a[i]);
     }
     return 0;
-}```
+}
+```
 ##46.Write a program to find out whether a square matrix is symmetric or not. A square matrixis symmetric if the transpose of the matrix is equal to the matrix.
-```c#include <stdio.h>
+```c
+#include <stdio.h>
 int main() {
     int n, i, j;
     printf("Enter order of square matrix: ");
@@ -1488,4 +1567,5 @@ int main() {
 
     printf("The matrix is symmetric.\n");
     return 0;
-}```
+}
+```
