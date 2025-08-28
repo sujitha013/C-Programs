@@ -311,5 +311,126 @@ int main()
 ```
 ##13.Write a program in C to extract a substring from a given string. 
 ```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[00],substr[100];
+    int i,length,start;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    printf("Enter start positio (0-Based index): ");
+    scanf("%d",&start);
+    printf("Enter the length of substring:");
+    scanf("%d",&length);
+    for(i=0;(i<length)&&(str[start+i]!='\0');i++)
+    {
+        substr[i]=str[start+i];
+    }
+    substr[i]='\0';
+    printf("\nExtracted substring:%s",substr);
+    return 0;
+}
+```
+##14.Write a C program to generate and print all possible substrings of a given string.
+```c
+#include<string.h>
+int main()
+{
+    char str[100];
+    int i,j,k,length;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    length=strlen(str);
+    printf("\nAll possible substrings in a string:");
+    for(i=0;i<length;i++)
+    {
+        for(j=i;j<length;j++)
+        {
+            for(k=i;k<=j;k++)
+            {
+                printf("%c",str[k]);
+            }
+            printf("\n");
+        }
+    }
+    return 0;
+}
+```
+##15.Write a C program to check whether a substring is present in a string. 
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],substr[100];
+    int i,j,len1,len2,found;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    printf("Enter substring:");
+    fgets(substr,sizeof(substr),stdin);
+    substr[strcspn(substr,"\n")]='\0';
+    len1=strlen(str);
+    len2=strlen(substr);
+    found=0;
+    for(i=0;i<len1-len2;i++)
+    {
+        for(j=0;j<len2;j++)
+        {
+            if(str[i+j]!=substr[j])
+            {
+            break;
+            }
+        }
+        if(j==len2)
+        {
+            found=1;
+            break;
+        }
+    }
+     if (found)
+        printf("Substring found!\n");
+    else
+        printf("Substring not found!\n");
+    
+    return 0;
+}
+```
+##16.Write a program in C to read a sentence and replace lowercase characters with uppercase and vice versa.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[100];
+    int i;
+    printf("Enter sentence:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(isalpha(str[i]))
+        {
+            if(isupper(str[i]))
+            {
+                str[i]=tolower(str[i]);
+            }
+            else if(islower(str[i]))
+            {
+                str[i]=toupper(str[i]);
+            }
+        }
+    }
+    printf("\nConverted sentence:%s",str);
+    
+    return 0;
+}
+```
+##17.Write a program in C to find the number of times a given word 'the' appears in the given string
+```c
+
 
 
