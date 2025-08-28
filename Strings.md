@@ -360,6 +360,8 @@ int main()
 }
 ```
 ##15.Write a C program to check whether a substring is present in a string. 
+
+```c
 #include<stdio.h>
 #include<string.h>
 int main()
