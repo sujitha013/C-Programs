@@ -451,7 +451,7 @@ int main()
     char *token=strtok(str," ,.!?;");
     while(token!=NULL)
     {
-        if(strcmp(token,"apple")==0)
+        if(strcmp(token,"the")==0)
         {
             count++;
         }
