@@ -1657,4 +1657,43 @@ int main()
     return 0;
 }
 ```
-##49.
+##49.Read two sorted arrays and merge them into a single sorted array.
+```c
+#include<stdio.h>
+ int main()
+ {
+int a[100],b[100],c[100],size1,size2,i,j,temp;
+ printf("Enter size of first array:");
+scanf("%d",&size1);
+printf("\nEnter first array elements:");
+for(i=0;i<size1;i++)
+ {
+scanf("%d",&a[i]);
+ c[i]=a[i];
+ }
+printf("\nEnter size of second array:");
+ scanf("%d",&size2);
+printf("\nEnter second array elements:");
+ for(i=0;i<size2;i++)
+ {
+scanf("%d",&b[i]);
+ c[size1+i]=b[i];
+ }
+for(i=0;i<size1+size2;i++)
+ {
+for(j=i+1;j<size1+size2;j++)
+{
+if(c[j]<c[i])
+{
+temp=c[i]; c[i]=c[j]; c[j]=temp;
+ }
+ }
+ }
+ printf("\nmerged array:");
+ for(i=0;i<size1+size2;i++)
+ {
+printf("%d ",c[i]);
+ }
+return 0;
+ }
+```
