@@ -1697,3 +1697,35 @@ printf("%d ",c[i]);
 return 0;
  }
 ```
+50.Write a C program to reverse an array using a function.
+```c
+#include<stdio.h>
+ int reversearray(int[],int);
+ int main()
+{
+ int a[100],size,i;
+ printf("Enter size:");
+scanf("%d",&size);
+ printf("\nEnter elements:");
+ for(i=0;i<size;i++)
+ {
+scanf("%d",&a[i]);
+}
+ reversearray(a,size); return 0;
+ }
+int reversearray(int a[],int size)
+{
+int temp,i;
+ for(i=0;i<size/2;i++)
+ {
+temp=a[i];
+ a[i]=a[size-i-1];
+ a[size-i-1]=temp;
+ }
+printf("\nReversed array:");
+ for(i=0;i<size;i++)
+ {
+ printf("%d ",a[i]);
+}
+ }
+ ```
