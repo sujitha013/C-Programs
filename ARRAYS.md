@@ -1574,3 +1574,45 @@ int main() {
     return 0;
 }
 ```
+##47.Write a C program to rotate an array of integers to the right by k positions.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,j,n,k,temp;
+    printf("Enter n:");
+    scanf("%d",&n);
+    printf("Enter elements:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("Enter k:");
+    scanf("%d",&k);
+    k=k%n;
+    for(i=0;i<n/2;i++)
+    {
+       temp=a[i];
+       a[i]=a[n-i-1];
+       a[n-i-1]=temp;
+    }
+    for(i=0;i<k/2;i++)
+    {
+        temp=a[i];
+        a[i]=a[k-i-1];
+        a[k-i-1]=temp;
+    }
+    for(i=0;i<(n-k)/2;i++)
+    {
+        temp=a[k+i];
+        a[k+i]=a[n-(k-i)-1];
+        a[n-(k-i)-1]=temp;
+    }
+    printf("\nOutput:");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    
+}
+```
