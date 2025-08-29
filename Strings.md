@@ -1144,4 +1144,92 @@ int main()
     return 0;
 }
 ```
-##44.
+##44.Write a C program to remove all vowels from a given string (using pointer notation).
+```c
+#include<stdio.h>
+ #include<string.h>
+ #include<ctype.h>
+ int main()
+ {
+char str[100],*p;
+ printf("Enter string:");
+ fgets(str,sizeof(str),stdin);
+ str[strcspn(str,"\n")]='\0';
+ printf("\nstring without vowels:");
+ for(p=str;*p!='\0';p++)
+{
+*p=tolower(*p);
+ if((*p!='a')&&(*p!='e')&&(*p!='i')&&(*p!='o')&&(*p!='u')&&(*p!='A')&&(*p!='E')&&(*p!='I')&&(*p!='O')&&(*p!='U'))
+ {
+printf("%c",*p) ;
+ }
+}
+return 0;
+}
+```
+##45.Read a line (may include spaces). Print the first character that does not repeat. If none, print No unique character.
+```c
+#include<stdio.h>
+ #include<string.h>
+ #include<ctype.h>
+int main()
+ {
+char str[1000];
+ int i,j,flag;
+ printf("Enter string:");
+ fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+ for(i=0;str[i]!='\0';i++)
+ {
+str[i]=tolower(str[i]);
+ }
+for(i=0;str[i]!='\0';i++)
+ {
+flag=0;
+ for(j=i+1;str[j]!='\0';j++)
+ {
+if(str[i]==str[j])
+ {
+flag=1;
+ break;
+ }
+ }
+ if(flag==0)
+{
+printf("\nThe first non repeating:%c",str[i]);
+return 0;
+ }
+}
+ printf("\nNot found such character.");
+ return 0;
+ }
+```
+##46.Read a line of text and print the number of words and number of characters (excluding spaces).
+```c
+#include<stdio.h>
+ #include<string.h>
+#include<ctype.h>
+ int main()
+ {
+char str[100];
+ int i,count=0,character=0;
+printf("Enter string:");
+ fgets(str,sizeof(str),stdin);
+ str[strcspn(str,"\n")]='\0';
+for(i=0;str[i]!=0;i++)
+ {
+if((str[i]!=' '&&str[i]!='\0')&&(i==0||str[i-1]==' '))
+ {
+count++;
+ }
+}
+ for(i=0;str[i]!='\0';i++)
+{
+if(!isspace(str[i]))
+{
+character++;
+ }
+ }
+printf("Number of words=%d\nNumber of characters=%d",count,character);
+ return 0;
+ }```
