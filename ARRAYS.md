@@ -1616,4 +1616,45 @@ int main()
     
 }
 ```
-##
+##48.Write a C program to perform binary search on an array.
+```c
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter size:");
+    scanf("%d",&n);
+    int a[n],left=0,right=n-1,mid,search,i,found=0;
+    printf("\nEnter elements:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("\nEnter element to search:");
+    scanf("%d",&search);
+    while(left<=right)
+    {
+        mid=(left+right)/2;
+        if(search==a[mid])
+        {
+            printf("\nElement Found at index %d",mid);
+            found=1;
+            break;
+        }
+        else if(search<a[mid])
+        {
+            right=mid-1;
+        }
+        else if(search>a[mid])
+        {
+            left=mid+1;
+        }
+    }
+    if(found==0)
+    {
+        printf("\nElement not found.");
+    }
+    return 0;
+}
+```
+##49.
