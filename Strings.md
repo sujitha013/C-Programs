@@ -1232,4 +1232,42 @@ character++;
  }
 printf("Number of words=%d\nNumber of characters=%d",count,character);
  return 0;
- }```
+ }
+```
+##47.Read two strings and check if they are anagrams (i.e., contain the same characters in any order). Ignore case.
+```c
+#include<stdio.h>
+ #include<string.h>
+ #include<ctype.h>
+ int main()
+ {
+char str[1000],ch1,ch2,str1[1000];
+ int freq1[26]={0},freq2[26]={0},i;
+ printf("Enter first string:");
+fgets(str,sizeof(str),stdin);
+ str[strcspn(str,"\n")]='\0';
+printf("\nEnter second string:");
+fgets(str1,sizeof(str1),stdin);
+str1[strcspn(str1,"\n")]='\0';
+ for(i=0;str[i]!='\0';i++)
+ {
+ ch1=tolower(str[i]); freq1[ch1-'a']++;
+ }
+for(i=0;str1[i]!='\0';i++)
+{
+ch2=tolower(str1[i]);
+freq2[ch2-'a']++;
+ }
+ for(i=0;i<26;i++)
+ {
+if(freq1[i]!=freq2[i])
+ {
+ printf("\nStrings are not Aanagrams");
+ return 0;
+ }
+ }
+ printf("\n String are anagrams");
+ return 0;
+ }
+```
+##48.
