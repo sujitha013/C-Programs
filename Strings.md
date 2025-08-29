@@ -73,7 +73,8 @@ int main()
 }
 ```
 ##4.Write a program in C to separate individual characters from a string.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 #include<string.h>
 int main()
 {
@@ -674,5 +675,32 @@ int main() {
     return 0;
 }
 ```
-##
+##27.Write a C program to read a string and print the frequency of each character (ignore case, ignore spaces).
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[100];
+    int i,freq[256]={0};
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    for(i=0;str[i]!='\0';i++)
+    {
+        str[i]=tolower(str[i]);
+        freq[(int)str[i]]++;
+    }
+    printf("Output:");
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]!=' ' && freq[(int)str[i]]>0)
+        printf("%c->%d\n",str[i],freq[(int)str[i]]);
+        freq[(int)str[i]]=0;
+    }
+    
+    return 0;
+}
+```
 
