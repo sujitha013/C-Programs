@@ -937,4 +937,155 @@ int main()
     return 0;
 }
 ```
-
+##37.Write a C program to find the first occurrence of a character in a given string.
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],ch;
+    int i;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    printf("Enter character to find:");
+    scanf("%c",&ch);
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]==ch)
+        {
+     printf("First occurrence of %c is at position %d",str[i],i+1);
+     return 0;
+        }
+    }
+    printf("Character %c not found in the string",ch);
+    return 0;
+}
+```
+##38.Write a C program to find the last occurrence of a character in a given string. 
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],ch;
+    int i,lastpos=-1;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    printf("Enter character to find:");
+    scanf("%c",&ch);
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]==ch)
+        {
+     lastpos=i;
+        }
+        
+    }
+    if(lastpos!=-1)
+        {
+            printf("Last occurrence of %c is at position %d",ch,lastpos+1);
+        }
+    else
+    {
+    printf("The character %c not found in the string.",ch);
+    }
+    return 0;
+}
+```
+##39.Write a C program to search all occurrences of a character in a given string.
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],ch;
+    int i,found=0;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    printf("Enter character to find:");
+    scanf("%c",&ch);
+    printf("position of character %c in the string:",ch);
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]==ch)
+        {
+       printf("%d ",i+1);
+       found=1;
+        }
+    }
+    if(!found)
+    printf("\nCharacter %c not found in the string.",ch);
+    return 0;
+}
+```
+##40.Write a C program to find the highest frequency character in a string.
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    int i,freq[256]={0};
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    for(i=0;str[i]!='\0';i++)
+    {
+        freq[(int)str[i]]++;
+    }
+    int max=freq[(int)str[0]];
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(freq[(int)str[i]]>max)
+        {
+            max=freq[(int)str[i]];
+        }
+    }
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(freq[(int)str[i]]==max)
+        {
+     printf("Highest frequency character: %c\n", str[i]);
+            break; 
+        }
+    }
+    return 0;
+}
+```
+##41.Write a C program to find the lowest frequency character in a string.
+```c
+#include<string.h>
+int main()
+{
+    char str[100];
+    int i,freq[256]={0};
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    for(i=0;str[i]!='\0';i++)
+    {
+        freq[(int)str[i]]++;
+    }
+    int min=strlen(str);
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(freq[(int)str[i]]<min&&freq[(int)str[i]]>0)
+        {
+            min=freq[(int)str[i]];
+        }
+    }
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(freq[(int)str[i]]==min)
+        {
+     printf("lowest frequency character: %c\n", str[i]);
+            break; 
+        }
+    }
+    return 0;
+}
+```
+##42.
