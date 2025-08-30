@@ -214,7 +214,8 @@ int main()
         printf("%d ", c[i]);
 
     return 0;
-}```
+}
+```
 ##8.Write a  program in C to count the frequency of each element of an array.
 ```c
 #include<stdio.h>
@@ -872,6 +873,55 @@ int main()
         printf("\n");
     }
 
+    return 0;
+}
+```
+##26.Write a C program to rotate an N x N matrix 90° clockwise.
+```c
+#include<stdio.h>
+int main()
+{
+    int rows,cols;
+    printf("Enter rows and cols:");
+    scanf("%d%d",&rows,&cols);
+    int a[rows][cols],i,j,b[cols][rows];
+    printf("Enter elements:");
+    for(i=0;i<rows;i++)
+    {
+        for(j=0;j<cols;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(j=0;j<cols;j++)
+    {
+        for(i=0;i<rows;i++)
+        {
+           b[j][i]=a[i][j];
+        }
+        printf("\n");
+    }
+    for(i=0;i<cols;i++)
+    {
+         int start=0;
+        int end=rows-1;
+        while(start<end)
+            {
+                int temp=b[i][start];
+                b[i][start]=b[i][end];
+                b[i][end]=temp;
+        start++;
+        end--;
+         }
+    }
+    for(i=0;i<cols;i++)
+    {
+        for(j=0;j<rows;j++)
+        {
+            printf("%d ",b[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
 ```
