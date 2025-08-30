@@ -1803,3 +1803,39 @@ int main()
     return 0;
 }
 ```
+##52.Write a program to input a matrix and print only the boundary elements (first row, last row, first column, last column).
+```c
+#include<stdio.h>
+int main()
+{
+    int rows,cols;
+    printf("Enter rows and cols:");
+    scanf("%d%d",&rows,&cols);
+    int i,j,a[rows][cols];
+    printf("Enter elements:");
+    for(i=0;i<rows;i++)
+    {
+        for(j=0;j<cols;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(j=0;j<cols;j++)
+     printf("%d ",a[0][j]);
+     for(i=1;i<rows;i++)
+     printf("%d ",a[i][cols-1]);
+     if(rows>1)
+     {
+     for(j=cols-2;j>=0;j--)
+     printf("%d ",a[rows-1][j]);
+     }
+     if(cols>1)
+     {
+         for(i=rows-2;i>0;i--)
+         printf("%d ",a[i][0]);
+     }
+            
+            
+   return 0;
+}
+```
