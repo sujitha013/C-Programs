@@ -1023,11 +1023,11 @@ int main()
     {
         scanf("%d",&a[i]);
     }
-    for(i=0;i<size;i++)
+    for(i=0;i<size-1;i++)
     {
         sum=sum+a[i];
     }
-    miss=sum-total;
+    miss=total-sum;
     printf("The missing number:%d",miss);
     return 0;
 }
