@@ -1236,7 +1236,7 @@ printf("Number of words=%d\nNumber of characters=%d",count,character);
 ```
 ##47.Read two strings and check if they are anagrams (i.e., contain the same characters in any order). Ignore case.
 ```c
-#include<stdio.h>
+ #include<stdio.h>
  #include<string.h>
  #include<ctype.h>
  int main()
@@ -1270,4 +1270,53 @@ if(freq1[i]!=freq2[i])
  return 0;
  }
 ```
-##48.
+##48.Write a C program to reverse each word in a given string without changing the order of words.
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],str1[100];
+    int start,end,k=0,i;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]!=' ')
+        {
+           str1[k++]=str[i]; 
+        }
+        else
+        {
+            str1[k]='\0';
+            end=strlen(str1);
+            start=0;
+            while(start<end-1)
+            {
+                char temp=str1[start];
+                str1[start]=str1[end-1];
+                str1[end-1]=temp;
+                start++;
+                end--;
+            }
+            printf("%s ",str1);
+            k=0;
+        }
+    }
+    str1[k]='\0';
+    end=strlen(str1);
+    start=0;
+    while(start<end-1)
+            {
+                char temp=str1[start];
+                str1[start]=str1[end-1];
+                str1[end-1]=temp;
+                start++;
+                end--;
+            }
+    
+    printf("%s",str1);
+    return 0;
+}
+```
