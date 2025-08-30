@@ -1736,10 +1736,12 @@ for(j=i+1;j<size1+size2;j++)
 {
 if(c[j]<c[i])
 {
-temp=c[i]; c[i]=c[j]; c[j]=temp;
- }
- }
- }
+temp=c[i];
+ c[i]=c[j];
+c[j]=temp;
+  }
+   }
+     }
  printf("\nmerged array:");
  for(i=0;i<size1+size2;i++)
  {
