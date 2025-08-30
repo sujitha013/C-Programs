@@ -1782,3 +1782,24 @@ printf("\nReversed array:");
 }
  }
  ```
+##51.Given an array where every number occurs twice except one, find that single number using bitwise XOR.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,result=0,size;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<size;i++)
+    {
+        result=result^a[i];
+    }
+    printf("\nSingle element=%d",result);
+    return 0;
+}
+```
