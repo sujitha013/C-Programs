@@ -1320,3 +1320,32 @@ int main()
     return 0;
 }
 ```
+##49.Write a program to input two strings and remove from the first string all characters that appear in the second string.
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],str1[100];
+    int i,freq1[256]={0};
+    printf("Enter first string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    printf("Enter second string:");
+    fgets(str1,sizeof(str1),stdin);
+    str1[strcspn(str1,"\n")]='\0';
+    for(i=0;str1[i]!='\0';i++)
+    {
+        freq1[(unsigned char)str1[i]]=1;
+    }
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(!freq1[(unsigned char)str[i]])
+        {
+            printf("%c",str[i]);
+        }
+    }
+    
+    
+}
+```
