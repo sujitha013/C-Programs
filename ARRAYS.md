@@ -511,7 +511,8 @@ return 0;
 }
 ```
 ##16.Write a program in C for a 2D array of size 3x3 and print the matrix.
-```c#include<stdio.h>
+```c
+#include<stdio.h>
 int main()
 {
     int a[3][3],i,j;
