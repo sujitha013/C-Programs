@@ -380,3 +380,142 @@ int main()
     return 0;
 }
 ```
+##16.WRITE A C PROGRAM TO CALCULATE THE SUM OF NUMBERS FROM 1 TO 100 USING A WHILE 
+LOOP? 
+```c
+#include<stdio.h>
+int main()
+{
+    int i=1,sum=0;
+    while(i<=100)
+    {
+        sum=sum+i;
+        i++;
+    }
+    printf("The sum of numbers from 1 to 100:%d",sum);
+    return 0;
+}
+```
+##17.WRITE A C PROGRAM TO FIND THE FACTORIAL OF A GIVEN NUMBER USING A FOR LOOP?
+```c
+#include<stdio.h>
+int main()
+{
+    int i,n,product=1;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        product*=i;
+    }
+    printf(" factorial of %d = %d",n,product);
+    return 0;
+}```
+##18.WRITE A C PROGRAM TO CHECK WHETHER A GIVEN NUMBER IS PRIME OR NOT USING A 
+WHILE LOOP?
+```c
+#include<stdio.h>
+int main()
+{
+    int i=2,n,count =0;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    if(n==1)
+    {
+        printf("%d is not a prime number",n);
+        return 0;
+    }
+    while(i<=n/2)
+    {
+        if(n%i==0)
+        {
+           count++;
+        }
+        i++;
+    }
+    if(count==0)
+    {
+        printf("%d is a prime number",n);
+    }
+    else
+    {
+       printf("%d is not a prime number",n);
+    }
+    
+    
+    return 0;
+}
+```
+##19.WRITE A C PROGRAM TO FIND THE SUM OF DIGITS OF A NUMBER USING A WHILE LOOP?
+```c
+#include<stdio.h>
+int main()
+{
+    int n,sum=0,rem;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    int i=n;
+    while(i>0)
+    {
+        rem=i%10;
+        sum=sum+rem;
+        i=i/10;
+    }
+    printf("Sum of digits=%d",sum);
+    return 0;
+}
+```
+##20.WRITE A C PROGRAM TO PRINT FIBONACCI SERIES UP TO N TERMS USING A FOR LOOP? 
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    int n1=0,n2=1;
+    int next=n1+n2;
+  printf("Fibonacci Series:%d %d ",n1,n2);
+  for(i=3;i<=n;i++)
+  {
+      printf("%d ",next);
+      n1=n2;
+      n2=next;
+      next=n1+n2;
+  }
+    return 0;
+}
+```
+##21.WRITE A C PROGRAM TO REVERSE A GIVEN NUMBER USING A WHILE LOOP?
+```c
+#include<stdio.h>
+int main()
+{
+    int n,temp,rem,rev=0;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    int sing=0;
+    if(n<0)
+    {
+     n=-n; 
+     sing=-1;
+    }
+    temp=n;
+    while(temp>0)
+    {
+        rem=temp%10;
+        rev=rev*10+rem;
+        temp=temp/10;
+    }
+    if(sing==-1)
+    {
+    rev=-rev;
+    }
+    printf("%d",rev);
+    
+    
+    return 0;
+}
+```
+##22.WRITE A C PROGRAM TO FIND THE POWER OF A NUMBER USING A FOR LOOP?
+```c
