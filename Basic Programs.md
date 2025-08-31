@@ -519,3 +519,20 @@ int main()
 ```
 ##22.WRITE A C PROGRAM TO FIND THE POWER OF A NUMBER USING A FOR LOOP?
 ```c
+#include<stdio.h>
+int main()
+{
+    int b,e,res=1,i;
+    printf("Enter base:");
+    scanf("%d",&b);
+    printf("Enter exponent:");
+    scanf("%d",&e);
+    for(i=1;i<=e;i++)
+    {
+        res=res*b;
+    }
+    printf("%d^%d=%d",b,e,res);
+    return 0;
+}
+```
+##23.
