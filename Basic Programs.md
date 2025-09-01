@@ -651,10 +651,12 @@ int n,i,rem,rev=0;
 printf("Enter a number:");
 scanf("%d",&n);
 int org=n;
-for(i=n;i>0;i=i/10)
+i=n;
+while(i>0)
 {
 rem=i%10;
 rev=rev*10+rem;
+i=i/10;
 }
 if(n==rev)
 {
@@ -667,3 +669,87 @@ printf("%d is not a palindrome number.",n);
 return 0;
 }
 ```
+##28.WRITE A PROGRAM IN C TO FIND THE SUM OF ELEMENTS IN THE UPPER TRIANGULAR MATRIX USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include<stdio.h>
+int main()
+{
+    int rows,cols;
+    printf("Enter rows and cols:");
+    scanf("%d%d",&rows,&cols);
+    int a[rows][cols],i,j,sum=0;
+    printf("Enter elements:");
+    for(i=0;i<rows;i++)
+    {
+        for(j=0;j<cols;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<rows;i++)
+    {
+        for(j=0;j<cols;j++)
+        {
+            if(i<=j)
+            {
+                sum=sum+a[i][j];
+            }
+        }
+    }
+    printf("Sum of lower triangular matrix elements = %d",sum);
+
+return 0;
+}
+```
+##29.WRITE A PROGRAM IN C TO FIND THE SUM OF ELEMENTS IN THE LOWER TRIANGULAR MATRIX USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include<stdio.h>
+int main()
+{
+    int rows,cols;
+    printf("Enter rows and cols:");
+    scanf("%d%d",&rows,&cols);
+    int a[rows][cols],i,j,sum=0;
+    printf("Enter elements:");
+    for(i=0;i<rows;i++)
+    {
+        for(j=0;j<cols;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<rows;i++)
+    {
+        for(j=0;j<cols;j++)
+        {
+            if(i>=j)
+            {
+                sum=sum+a[i][j];
+            }
+        }
+    }
+    printf("Sum of lower triangular matrix elements = %d",sum);
+
+return 0;
+}
+```
+##30.WRITE A C PROGRAM TO PRINT ALL THE ODD NUMBERS BETWEEN 1 TO 50 USING A FOR LOOP? 
+```c
+#include<stdio.h>
+int main()
+{
+    int i;
+    printf("Odd numbers between 1 to 50:\n");
+    for(i=1;i<=50;i++)
+    {
+        if(i%2!=0)
+        {
+            printf("%d ",i);
+        }
+    }
+    return 0;
+}
+```
+
+
+
