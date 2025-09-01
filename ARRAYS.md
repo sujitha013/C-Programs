@@ -1839,3 +1839,32 @@ int main()
    return 0;
 }
 ```
+##53.Read an array of size n and an integer sum. Count the number of pairs in the array whose sum equals the given value.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,j,size,sum,count=0;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("Enter sum:");
+    scanf("%d",&sum);
+    for(i=0;i<size;i++)
+    {
+        for(j=i+1;j<size;j++)
+        {
+            if(a[i]+a[j]==sum)
+            {
+                count++;
+            }
+        }
+    }
+    printf("Number of pairs=%d",count);
+    return 0;
+}
+```
