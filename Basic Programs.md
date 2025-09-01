@@ -750,6 +750,85 @@ int main()
     return 0;
 }
 ```
-
+##31.WRITE A C PROGRAM TO FIND THE SUM OF FIRST N NATURAL NUMBERS WHICH ARE NOT DIVISIBLE BY 3 OR 5 USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i,sum=0;
+    printf("Enter n:");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        if(i%3!=0&&i%5!=0)
+        {
+            sum=sum+i;
+        }
+    }
+    printf("Sum=%d",sum);
+}
+```
+##32.WRITE A C PROGRAM TO FIND THE SUM OF ALL EVEN NUMBERS BETWEEN TWO GIVEN NUMBERS USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include<stdio.h>
+int main()
+{
+    int start,end;
+    printf("Enter two numbers:");
+    scanf("%d%d",&start,&end);
+    int i,sum=0;
+    for(i=start;i<=end;i++)
+    {
+        if(i%2==0)
+        {
+            sum=sum+i;
+        }
+    }
+    printf("Sum of even numbers between %d and %d =%d",start,end,sum);
+    return 0;
+}
+```
+##33.WRITE A C PROGRAM TO FIND THE SUM OF ALL ODD NUMBERS BETWEEN TWO GIVEN 
+NUMBERS USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include<stdio.h>
+int main()
+{
+    int start,end;
+    printf("Enter two numbers:");
+    scanf("%d%d",&start,&end);
+    int i,sum=0;
+    for(i=start;i<=end;i++)
+    {
+        if(i%2!=0)
+        {
+            sum=sum+i;
+        }
+    }
+    printf("Sum of odd numbers between %d and %d =%d",start,end,sum);
+    return 0;
+}
+```
+##34.WRITE A C PROGRAM TO CHECK WHETHER A GIVEN NUMBER IS A PERFECT SQUARE OR NOT USING LOOPS AND IF-ELSE STATEMENTS. 
+```c
+#include<stdio.h>
+int main()
+{
+    int i,n;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        if(i*i==n)
+        {
+            printf("%d is a perfect square.",n);
+            return 0;
+        }
+    }
+ printf("%d is not a perfect square.",n);
+return 0;
+}
+```
+##
 
 
