@@ -535,4 +535,134 @@ int main()
     return 0;
 }
 ```
-##23.
+##23.WRITE A C PROGRAM TO FIND THE FACTORIAL OF A NUMBER USING A WHILE LOOP?
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i=1,product=1;
+    printf("Enter number:");
+    scanf("%d",&n);
+    while(i<=n)
+    {
+       product*=i; 
+        i++;
+    }
+    printf("Factorial of number %d:%d",n,product);
+    return 0;
+}
+```
+##24..WRITE A C PROGRAM TO PRINT THE MULTIPLICATION TABLE OF A GIVEN NUMBER USING A FOR LOOP? 
+```c
+#include<stdio.h>
+ int main()
+{
+ int n,i;
+ printf("Enter number:");
+scanf("%d",&n);
+ if(n<0)
+ {
+ printf("There is no table.");
+ return 0;
+ }
+printf("Multiplication of table %d:\n",n);
+ for(i=1;i<=10;i++)
+ {
+printf("%dX%d=%d\n",n,i,n*i);
+ }
+return 0;
+}
+```
+##25.7.WRITE A PROGRAM IN C TO PRINT THE ARMSTRONG NUMBERS BETWEEN 1 AND 1000 USING A FOR LOOP? 
+```c
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int i,count,rem,sum,temp;
+    printf("Armstrong numbers between 1 to 1000:\n");
+    for(i=1;i<=1000;i++)
+    {
+        sum=0;
+        temp=i;
+        count=0;
+        while(temp>0)
+        {
+            count++;
+            temp=temp/10;
+        }
+        temp=i;
+        while(temp>0)
+        {
+            rem=temp%10;
+            sum=sum+pow(rem,count);
+            temp=temp/10;
+        }
+        if(sum==i)
+        {
+         printf("%d\n",sum);
+        }
+    }
+    return 0;
+}
+```
+##26.WRITE A PROGRAM IN C TO IMPLEMENT A SIMPLE CALCULATOR USING SWITCH-CASE STATEMENTS? 
+```c
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    char op;
+    printf("Enter two numbers:");
+    scanf("%d%d",&a,&b);
+    printf("Enter an operator (+, -, *, /):");
+    scanf(" %c",&op);
+    switch(op)
+    {
+        case '+':
+        printf("Result=%d",a+b);
+        break;
+         case '-':
+        printf("Result=%d",a-b);
+        break;
+         case '*':
+        printf("Result=%d",a*b);
+        break;
+         case '/':
+        if(b!=0)
+                printf("Result = %d",a/b);
+            else
+                printf("Error: Division by zero not allowed");
+            break;
+        default:
+            printf("Invalid operator");
+    }
+    
+    return 0;
+}
+```
+##27..WRITE A PROGRAM IN C TO CHECK WHETHER A GIVEN NUMBER IS A PALINDROME OR NOT USING WHILE LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include<stdio.h>
+int main()
+{
+int n,i,rem,rev=0;
+printf("Enter a number:");
+scanf("%d",&n);
+int org=n;
+for(i=n;i>0;i=i/10)
+{
+rem=i%10;
+rev=rev*10+rem;
+}
+if(n==rev)
+{
+printf("%d is a palindrome number.",n);
+}
+else
+{
+printf("%d is not a palindrome number.",n);
+}
+return 0;
+}
+```
