@@ -1349,3 +1349,55 @@ int main()
     
 }
 ```
+##50.Write a C program to check if two strings are anagrams (contain the same characters with the same frequency, but possibly in different order).
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str1[1000],str2[1000];
+    int i,freq1[26]={0},freq2[26]={0};
+    printf("Enter string1:");
+    fgets(str1,sizeof(str1),stdin);
+    str1[strcspn(str1,"\n")]='\0';
+    printf("Enter string2:");
+    fgets(str2,sizeof(str2),stdin);
+    str2[strcspn(str2,"\n")]='\0';
+    int len1=strlen(str1);
+    int len2=strlen(str2);
+    if(len1!=len2)
+    {
+        printf("The two strings are not anagram.");
+        return 0;
+    }
+    for(i=0;str1[i]!='\0';i++)
+    {
+        if(isalpha(str1[i]))
+        {
+        char ch=tolower(str1[i]);
+        freq1[ch-'a']++;
+        }
+    }
+    for(i=0;str2[i]!='\0';i++)
+    {
+        if(isalpha(str2[i]))
+        {
+        char ch=tolower(str2[i]);
+        freq2[ch-'a']++;
+        }
+    }
+    for(i=0;i<26;i++)
+    {
+        if(freq1[i]!=freq2[i])
+        {
+            printf("The Two Strings Not Anagrams.\n");
+            return 0;
+        }
+        
+    }
+    printf("The Two strings Anagrams.\n");
+    return 0;
+}
+```
+##
