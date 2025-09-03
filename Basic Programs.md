@@ -886,5 +886,114 @@ int main()
     
 }
 ```
+##36.WRITE A C PROGRAM TO FIND THE ASCII VALUE OF A CHARACTER USING LOOPS AND IF-ELSE 
+STATEMENTS?
+```c
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter a character:");
+    scanf("%c",&ch);
+        if(ch>='A'&&ch<='Z')
+        {
+            printf("The ASCII value of %c is %d",ch,ch);
+            return 0;
+        }
+         else if(ch>='a'&&ch<='z')
+         {
+    printf("The ASCII value of %c is %d",ch,ch);
+             return 0;
+         }
+         else if(ch>='0'&&ch<='9')
+         {
+    printf("The ASCII value of %c is %d",ch,ch);
+             return 0;
+         }
+         else
+         {
+    printf("The ASCII value of %c is %d",ch,ch);
+             return 0;
+         }
+         return 0;
+}
+```
+##37.WRITE A C PROGRAM TO FIND THE SUM OF ALL PRIME NUMBERS BETWEEN 1 AND 1000 USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include<stdio.h>
+int main()
+{
+    int i,sum=0,count,j;
+    printf("The prime numbers between 1 to 1000:\n");
+    for(i=1;i<=1000;i++)
+    {
+        count=0;
+        if(i==1)
+        {
+            continue;
+        }
+        for(j=2;j<i;j++)
+        {
+            if(i%j==0)
+            {
+                count++;
+            }
+        }
+        if(count==0)
+        {
+            printf("%d ",i);
+           sum=sum+i;
+        }
+    }
+    printf("\nThe sum of all prime numbers between 1 and 1000 is %d",sum);
+return 0;
+}
+```
+##38.WRITE A C PROGRAM TO FIND THE SUM OF THE CUBES OF THE DIGITS OF A GIVEN NUMBER USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,temp,rem,sum=0;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    temp=n;
+    while(temp>0)
+    {
+        rem=temp%10;
+        sum=sum+pow(rem,3);
+        temp=temp/10;
+    }
+    printf("Sum of cubes of digits=%d",sum);
+return 0;
+}
+```
+##40.WRITE A C PROGRAM TO FIND THE SUM OF THE EVEN DIGITS AND THE SUM OF THE ODD DIGITS SEPARATELY IN A GIVEN NUMBER USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,i,rem,evensum=0,oddsum=0;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    for(i=n;i>0;i=i/10)
+    {
+        rem=i%10;
+        if(rem%2==0)
+        {
+            evensum=evensum+rem;
+        }
+        else
+        {
+            oddsum=oddsum+rem;
+        }
+    }
+    printf("Sum of even digits=%d\nSum of odd digits=%d",evensum,oddsum);
+return 0;
+}
+```
+##41.
 
 
