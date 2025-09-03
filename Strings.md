@@ -1400,4 +1400,45 @@ int main()
     return 0;
 }
 ```
-##
+##51.Write a program to read a string (with multiple words) and print the length of the longest word.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<limits.h>
+int main()
+{
+    char str[100],str1[100][100],str2[100];
+    int i,k=0,j=0,large=INT_MIN;
+    printf("Enter the string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]!=' ')
+        {
+            str1[k][j++]=str[i];
+        }
+        else
+        {
+            str1[k][j]='\0';
+            if(j>large)
+            {
+                large=j;
+                strcpy(str2,str1[k]);
+            }
+            k++;
+            j=0;
+        }
+    }
+    str1[k][j]='\0';
+            if(j>large)
+            {
+                large=j;
+                strcpy(str2,str1[k]);
+                
+            }
+           
+            printf(" Length of the longest word=%d (%s)",large,str2);
+            return 0;
+}
+```
