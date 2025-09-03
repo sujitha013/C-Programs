@@ -153,6 +153,28 @@ int main()
     return 0;
 }
 ```
-##
+##9.Write a program to print the value and address of array elements by subscripting  a pointer  
+variable. 
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],*ptr,size,i;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    ptr=a;
+    for(i=0;i<size;i++)
+    {
+    printf("Element %d:Value=%d:Address:%p\n",i,*(ptr+i),(ptr+i));
+    }
+    return 0;
+}
+```
+##10.
 
 
