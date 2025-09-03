@@ -1868,3 +1868,32 @@ int main()
     return 0;
 }
 ```
+##54.Write a C program to generate and print all subarrays of a given array.
+```c
+#include<stdio.h>
+int main()
+{
+int a[100],i,n,j,k;
+printf("Enter size:");
+scanf("%d",&n);
+printf("Enter elements:");
+for(i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("Subarrays of given array:\n");
+for(i=0;i<n;i++)
+{
+for(j=i;j<n;j++)
+{
+for(k=i;k<=j;k++)
+{
+printf("%d ",a[k]);
+}
+printf("\n");
+}
+}
+return 0;
+}
+```
+
