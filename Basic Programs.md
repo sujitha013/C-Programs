@@ -994,6 +994,35 @@ int main()
 return 0;
 }
 ```
-##41.
+##41.Write a program to input an integer n and count the number of trailing zeros in n!.
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i,rem,count=0;
+    long long pod=1,temp;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        pod=pod*i;
+    }
+    printf("%d!=%lld",n,pod);
+    temp=pod;
+    while(temp>0)
+    {
+        rem=temp%10;
+        if(rem==0)
+        {
+            count++;
+        }
+        temp=temp/10;
+    }
+    printf("\nOutput=%d",count);
+    
+    return 0;
+}
+```
+##42.
 
 
