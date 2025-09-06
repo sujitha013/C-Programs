@@ -1418,3 +1418,43 @@ int main()
             return 0;
 }
 ```
+##52.Write a program to input a string and reverse only the vowels in it.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[100];
+    int i,start=0,end;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    end=strlen(str)-1;
+    for(i=0;str[i]!='\0';i++)
+    {
+        str[i]=tolower(str[i]);
+    }
+    while(start<end)
+    {
+        if(str[start]!='a'&&str[start]!='e'&&str[start]!='i'&&str[start]!='o'&&str[start]!='u')
+        {
+            start++;
+        }
+        else if(str[end]!='a'&&str[end]!='e'&&str[end]!='i'&&str[end]!='o'&&str[end]!='u')
+        {
+            end--;
+        }
+        else
+        {
+            char temp=str[start];
+            str[start]=str[end];
+            str[end]=temp;
+             start++;
+             end--;
+        }
+    }
+    printf("\nreverse only vowels in a given string:%s",str);
+    return 0;
+}
+```
