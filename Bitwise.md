@@ -42,3 +42,59 @@ int main()
     return 0;
 }
 ```
+##2.Find whether the number is odd or even 
+```c
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    if((n&1)==0)
+    {
+     printf("The number %d is even\n",n);   
+    }
+    else
+    {
+        printf("The number %d is odd\n",n);
+    }
+    return 0;
+}
+```
+##3.Check if the number is a power of 2
+```c
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    if((n&(n-1))==0&&(n!=0))
+    {
+     printf("The number %d is powe of 2",n);   
+    }
+    else
+    {
+        printf("The number %d is not power of 2\n",n);
+    }
+    return 0;
+}
+```
+##4.Can you swap two variables without using a temporary variable? Show the code.
+```c
+#include<stdio.h>
+int main()
+{
+   int a,b;
+   printf("Enter a and b:");
+   scanf("%d%d",&a,&b);
+   printf("Before swapping:a=%d b=%d\n",a,b);
+   a=a^b;
+   b=a^b;
+   a=a^b;
+   printf("After swapping:a=%d b=%d",a,b);
+    return 0;
+}
+```
+##5.
+
