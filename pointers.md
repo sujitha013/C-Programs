@@ -175,6 +175,48 @@ int main()
     return 0;
 }
 ```
-##10.
+##10.Create a function that swaps two numbers using   pointers. 
+```c
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    printf("Enter two numbers:");
+    scanf("%d%d",&a,&b);
+    printf("\nBefore swapping: a=%d b=%d",a,b);
+    int temp,*p,*q;
+    p=&a;
+    q=&b;
+    temp=*p;
+    *p=*q;
+    *q=temp;
+    printf("\nAfter swapping: a=%d b=%d",a,b);
+    return 0;
+}
+```
+##11.Implement a function that returns the length of a string using pointers
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    int count=0;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    char *p;
+    for(p=str;*p!='\0';p++)
+    {
+        count++;
+    }
+    printf("length of the string:%d",count);
+    
+    return 0;
+}
+```
+##12.Develop a function to reverse a string in place using pointers.
+```c
+
 
 
