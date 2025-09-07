@@ -1023,6 +1023,36 @@ int main()
     return 0;
 }
 ```
-##42.
+##42.A number is called Strong Number if the sum of the factorial of its digits equals the number itself.
+```c
+#include<stdio.h>
+int main()
+{
+    int n,temp,i,pod,rem,sum=0;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    temp=n;
+    while(temp>0)
+    {
+        rem=temp%10;
+        pod=1;
+        for(i=1;i<=rem;i++)
+        {
+            pod=pod*i;
+        }
+        sum=sum+pod;
+        temp=temp/10;
+    }
+    if(sum==n)
+    {
+        printf("Strong Number.\n");
+    }
+    else
+    {
+        printf("Not a strong number.\n");
+    }
+    return 0;
+}
+```
 
 
