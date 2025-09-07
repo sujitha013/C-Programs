@@ -217,6 +217,83 @@ int main()
 ```
 ##12.Develop a function to reverse a string in place using pointers.
 ```c
+#include<stdio.h>
+#include<string.h>
+void stringreverse(char[]);
+int main()
+{
+    char str[100];
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    stringreverse(str);
+    return 0;
+}
+void stringreverse(char str[])
+{
+    char *start=str,*end=str+strlen(str)-1;
+    char temp;
+    while(start<end)
+    {
+       temp=*start;
+       *start=*end;
+       *end=temp;
+       start++;
+       end--;
+    }
+    printf("Reverse string:%s\n",str);
+}
+```
+##13.Write a program to find the largest element using Dynamic Memory Allocation.
+```c
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int *p,n,large;
+   printf("Enter size:");
+    scanf("%d",&n);
+    p=(int*)malloc(sizeof(int)*n);
+    printf("Enter elements:");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&p[i]);
+    }
+    large=p[0];
+    for( int i=1;i<n;i++)
+    {
+        if(p[i]>large)
+        {
+            large=p[i];
+        }
+    }
+    printf("The Largest Element is:%d",large);
+    return 0;
+}
+```
+##14.Write a program  to swap elements using call by reference. 
+```c
+#include<stdio.h>
+int swap(int*,int*);
+int main()
+{
+    int a,b;
+    printf("Enter a and b:");
+    scanf("%d%d",&a,&b);
+    swap(&a,&b);
+    printf("After swapping:a=%d b=%d",a,b);
+    return 0;
+}
+int swap(int *a,int *b)
+{
+    printf("Before swapping:a=%d b=%d\n",*a,*b);
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+
+}
+```
+##15.
 
 
 
