@@ -1441,4 +1441,30 @@ int main()
     return 0;
 }
 ```
-##57.
+##57.Write a C program to check whether the given number is a Harshad number (a number divisible by the sum of its digits).
+```c
+#include<stdio.h>
+int main()
+{
+   int n,rem,sum=0,temp;
+   printf("Enter a number:");
+   scanf("%d",&n);
+   temp=n;
+   while(temp>0)
+   {
+       rem=temp%10;
+       sum=sum+rem;
+       temp=temp/10;
+   }
+   if(n%sum==0)
+   {
+       printf("Harshad Number.\n");
+   }
+   else
+   {
+       printf("Not Harshad Number.\n");
+   }
+    return 0;
+}
+```
+##58.
