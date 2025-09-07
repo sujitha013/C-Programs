@@ -1928,4 +1928,36 @@ int main()
     return 0;
 }
 ```
+##56.Write a program to print all leaders in an array.
+```c
+#include<stdio.h>
+ int main()
+ {
+int a[100],i,j,size,flag;
+ printf("Enter size:");
+ scanf("%d",&size);
+ printf("Enter elements:");
+ for(i=0;i<size;i++)
+ {
+scanf("%d",&a[i]);
+ }
+for(i=0;i<size;i++)
+ {
+ flag=1;
+ for(j=i+1;j<size;j++)
+ {
+if(a[j]>a[i])
+ {
+flag=0;
+break;
+ }
+ }
+if(flag)
+{
+printf("%d ",a[i]);
+ }
+ }
+return 0;
+ }
+```
 
