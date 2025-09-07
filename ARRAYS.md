@@ -1896,4 +1896,36 @@ printf("\n");
 return 0;
 }
 ```
+##55.Write a program to input an array and find the product of all elements except self for each position.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,size,pod,b[100],k=0,j;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<size;i++)
+    {
+        pod=1;
+        for(j=0;j<size;j++)
+        {
+            if(i!=j)
+            {
+                pod=pod*a[j];
+            }
+        }
+         b[k++]=pod;
+    }
+    for(i=0;i<k;i++)
+    {
+        printf("%d ",b[i]);
+    }
+    return 0;
+}
+```
 
