@@ -1054,5 +1054,391 @@ int main()
     return 0;
 }
 ```
+##43.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A HOLLOW SQUARE SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+72)  #include <stdio.h>
 
+int main()
+{
+    int n, i, j;
+    printf("Enter the size of the square: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+    {
+  for (j = 1; j <= n; j++)
+   {
+if (i == 1 || i == n || j == 1 || j == n)
+      {
+       printf("* ");
+       }
+      else
+      {
+      printf("  ");
+      }
+     }
+   printf("\n");
+    }
+return 0;
+}
+```
+##44.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A RIGHT TRIANGLE SHAPE USING LOOPS AND IF-ELSE STATEMENTS.
+```c
+#include <stdio.h>
+int main()
+ {
+    int n, i, j;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+     {
+        for (j = 1; j <= n; j++)
+          {
+            if (j <= i)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
 
+    return 0;
+}
+```
+##45.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A MIRRORED RIGHT TRIANGLE SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include <stdio.h>
+int main()
+{
+    int n, i, j;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+     {
+        for (j = 1; j <= n; j++)
+      {
+            if (j >= n - i + 1)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+##46.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A PYRAMID SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include <stdio.h>
+int main()
+ {
+    int n, i, j;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+     {
+        for (j = 1; j <= 2 * n - 1; j++)
+        {
+            if (j >= n - i + 1 && j <= n + i - 1)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+##47.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A MIRRORED PYRAMID SHAPE USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include <stdio.h>
+int main()
+{
+    int n, i, j;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+     {
+        for (j = 1; j <= 2 * n - 1; j++)
+         {
+            if (j >= i && j <= 2 * n - i)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+##48.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A DIAMOND SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include <stdio.h>
+int main()
+ {
+    int n, i, j;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+       {
+        for (j = 1; j <= 2 * n - 1; j++)
+          {
+            if (j >= n - i + 1 && j <= n + i - 1)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+
+    for (i = n - 1; i >= 1; i--)
+      {
+        for (j = 1; j <= 2 * n - 1; j++)
+          {
+            if (j >= n - i + 1 && j <= n + i - 1)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+return 0;
+}
+```
+##49.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A HOLLOW DIAMOND SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include <stdio.h>
+int main() {
+    int n, i, j;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= 2 * n - 1; j++)
+        {
+            if (j == n - i + 1 || j == n + i - 1)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+
+    for (i = n - 1; i >= 1; i--)
+    {
+        for (j = 1; j <= 2 * n - 1; j++)
+         {
+            if (j == n - i + 1 || j == n + i - 1)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+return 0;
+}
+```
+##50.WRITE A C PROGRAM TO PRINT THE PATTERN OF NUMBERS IN A PYRAMID SHAPE USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include <stdio.h>
+int main()
+ {
+    int n, i, j, num;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+      {
+        num = 1;
+        for (j = 1; j <= 2 * n - 1; j++)
+        {
+            if (j >= n - i + 1 && j <= n + i - 1)
+           {
+                printf("%d ", num);
+                if (j < n) 
+                    num++;
+                else 
+                    num--;
+            } else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+##51.WRITE A C PROGRAM TO PRINT THE PATTERN OF NUMBERS IN A MIRRORED PYRAMID SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include <stdio.h>
+int main()
+ {
+    int n, i, j, num;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = n; i >= 1; i--)
+      {
+        num = 1;
+        for (j = 1; j <= 2 * n - 1; j++)
+          {
+            if (j >= n - i + 1 && j <= n + i - 1)
+               {
+                printf("%d ", num);
+                if (j < n)
+                    num++;
+                else
+                    num--;
+            }
+             else
+              {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+##52.WRITE A C PROGRAM TO PRINT THE PATTERN OF NUMBERS IN A RIGHT TRIANGLE SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+include <stdio.h>
+int main()
+{
+    int n, i, j;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+      {
+        for (j = 1; j <= n; j++)
+        {
+            if (j <= i)
+                printf("%d ", j);
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+##53.WRITE A C PROGRAM TO PRINT THE PATTERN OF NUMBERS IN A MIRRORED RIGHT TRIANGLE SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include <stdio.h>
+int main()
+ {
+    int n, i, j;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+     {
+        for (j = 1; j <= n; j++)
+         {
+            if (j >= n - i + 1)
+                printf("%d ", j);
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+##54.WRITE A C PROGRAM TO PRINT THE PATTERN OF ALPHABETS IN A PYRAMID SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include <stdio.h>
+int main()
+ {
+    int n, i, j;
+    char ch;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+      {
+        ch = 'A';
+        for (j = 1; j <= 2 * n - 1; j++)
+         {
+            if (j >= n - i + 1 && j <= n + i - 1)
+             {
+                printf("%c ", ch);
+                if (j < n)
+                    ch++;
+                else
+                    ch--;
+            }
+          else
+            {
+            printf("  ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+##55.WRITE A C PROGRAM TO PRINT THE PATTERN OF ALPHABETS IN A MIRRORED PYRAMID SHAPE USING LOOPS AND IF-ELSE STATEMENTS? 
+```c
+#include <stdio.h>
+int main()
+{
+    int n, i, j;
+    char ch;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = n; i >= 1; i--) {
+        ch = 'A';
+        for (j = 1; j <= 2 * n - 1; j++)
+          {
+            if (j >= n - i + 1 && j <= n + i - 1)
+             {
+                printf("%c ", ch);
+                if (j < n)
+                    ch++;
+                else
+                    ch--;
+            }
+           else
+            {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+##56.WRITE A C PROGRAM TO PRINT THE PATTERN OF ALPHABETS IN A RIGHT TRIANGLE SHAPE USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include <stdio.h>
+int main()
+{
+    int n, i, j;
+    char ch;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+     {
+        ch = 'A';
+        for (j = 1; j <= n; j++)
+           {
+            if (j <= i) {
+                printf("%c ", ch);
+                ch++;
+            }
+           else
+             {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+##57.
