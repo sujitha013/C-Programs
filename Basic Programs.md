@@ -1467,4 +1467,77 @@ int main()
     return 0;
 }
 ```
-##58.
+##58.Write a C program to repeatedly calculate the sum of digits of a given number until a single-digit number is obtained, and print the final result.
+```c
+#include<stdio.h>
+int main()
+{
+    int n,rem,sum;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    while(n>9)
+    {
+        sum=0;
+        while(n>0)
+        {
+            rem=n%10;
+            sum=sum+rem;
+            n=n/10;
+        }
+        n=sum;
+    }
+    printf("%d",n);
+    return 0;
+}
+```
+##59.Take a number n. Print numbers from 1 to n using a loop with these conditions:
+*If divisible by 3 → print "Fizz"
+*If divisible by 5 → print "Buzz"
+*If divisible by both 3 and 5 → print "FizzBuzz"
+*Else → print the number itself.
+*Implement it using a switch inside the loop with clever flags instead of many if-else.
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i,flag;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        if(i%3==0&&i%5==0)
+        {
+            flag=0;
+        }
+        else if(i%3==0)
+        {
+            flag=1;
+        }
+        else if(i%5==0)
+        {
+            flag=-1;
+        }
+        else
+        {
+            flag=2;
+        }
+        switch (flag)
+        {
+            case -1:
+            printf("FizzBuzz\n");
+            break;
+            case 0:
+            printf("Fizz\n");
+            break;
+            case 1:
+            printf("Buzz\n");
+            break;
+            case 2:
+            printf("%d\n",i);
+            break;
+        }
+    }
+return 0;
+}
+```
+##60.
