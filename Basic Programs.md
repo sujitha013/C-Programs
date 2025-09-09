@@ -1540,4 +1540,41 @@ int main()
 return 0;
 }
 ```
-##60.
+##60.Write a program that checks whether a 3-digit number is "magical": A number is magical if the sum of its first and last digit is equal to the middle digit.
+```c
+#include<stdio.h>
+int main()
+{
+    int n,count=0,a[100],rem,k=0,i;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    int org=n;
+    for(i=n;i>0;i=i/10)
+    {
+        rem=i%10;
+        a[k++]=rem;
+        count++;
+    }
+    if(count!=3)
+    {
+    printf("\nThe number %d Not suitable for finding magical number.",org);
+        return 0;
+    }
+    for(i=0;i<k/2;i++)
+    {
+        int temp=a[i];
+        a[i]=a[k-i-1];
+        a[k-i-1]=temp;
+    }
+    if(a[0]+a[2]==a[1])
+    {
+     printf("the %d is a magical number.\n",org);
+    }
+    else
+    {
+      printf("the %d is not a magical number.\n",org);  
+    }
+    return 0;
+    
+}
+```
