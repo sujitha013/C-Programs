@@ -1960,4 +1960,52 @@ printf("%d ",a[i]);
 return 0;
  }
 ```
+##57.Given an array of integers, find the first missing positive number.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,n,j,temp,found;
+    printf("Enter n:");
+    scanf("%d",&n);
+    printf("Enter elements:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[j]<a[i])
+            {
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    for(i=a[0];i<=a[n-1];i++)
+    {
+        found=0;
+        for(j=0;j<n;j++)
+        {
+            if(a[j]==i)
+            {
+               found=1;
+                break;
+            }
+        }
+        if(!found)
+        {
+            if(i>0)
+            {
+            printf("%d ",i);
+            break;
+            }
+        }
+    }
+   return 0; 
+}
+```
 
