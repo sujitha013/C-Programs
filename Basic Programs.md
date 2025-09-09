@@ -1578,3 +1578,37 @@ int main()
     
 }
 ```
+##61.Write a program to check if a given number is a Neon Number.
+(A number is Neon if the sum of digits of its square equals the number itself).
+```c
+#include<stdio.h>
+int main()
+{
+    int n,squ,rem,sum=0,i;
+    printf("Enter a numbe:");
+    scanf("%d",&n);
+    int org=n;
+    for(i=1;i<=n;i++)
+    {
+        if(i==n)
+        {
+           squ=i*i; 
+        }
+    }
+    while(squ>0)
+    {
+       rem=squ%10;
+       sum=sum+rem;
+       squ=squ/10;
+    }
+    if(sum==org)
+    {
+        printf("Neon Number\n");
+    }
+    else
+    {
+        printf("Not Neon Number\n");
+    }
+    return 0;
+}
+```
