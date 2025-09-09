@@ -1458,3 +1458,36 @@ int main()
     return 0;
 }
 ```
+##53.Write a C program to implement basic string compression.
+.The program should take a string as input.
+.Consecutive repeating characters should be replaced by the character followed by the count of its repetition.
+.If a character occurs only once, it should remain as it is without a number.
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[1000];
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int i,count=1;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]==str[i+1])
+        {
+            count++;
+        }
+        else
+        {
+            if(count>1)
+                printf("%c%d",str[i],count);
+            else
+                printf("%c",str[i]);
+                count=1;
+        }
+    }
+    return 0;
+    
+}
+```
