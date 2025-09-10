@@ -2008,4 +2008,50 @@ int main()
    return 0; 
 }
 ```
-
+##58.Given an array of size n, rearrange the array in such a way that:
+.The first element is the maximum,
+.The second element is the minimum,
+.The third is the second maximum,
+.The fourth is the second minimum, and so on…
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,j,size,start=0,res[100],k=0;
+    printf("Enter size:");
+    scanf("%d",&size);
+    int end=size-1;
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<size;i++)
+    {
+        for(j=i+1;j<size;j++)
+        {
+            if(a[j]<a[i])
+            {
+                int temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    while(start<=end)
+    {
+        res[k++]=a[end--];
+        if(start<=end)
+        {
+            res[k++]=a[start++];
+            
+        }
+       
+    }
+    for(i=0;i<k;i++)
+    {
+        printf("%d ",res[i]);
+    }
+    return 0;
+}
+```
