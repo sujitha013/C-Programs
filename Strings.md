@@ -1491,3 +1491,46 @@ int main()
     
 }
 ```
+##54.Find the longest substring without repeating characters in a given string.
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int i,j,len,maxlen=0,startindex=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+        len=0;
+        int freq[256]={0};
+        for(j=i;str[j]!='\0';j++)
+        {
+           if(freq[(unsigned)str[j]]==0)
+           {
+               freq[(unsigned char)str[j]]++;
+               len++;
+           }
+           else
+           {
+               break;
+           }
+           if(len>maxlen)
+           {
+               maxlen=len;
+               startindex=i;
+           }
+            
+        }
+    }
+     printf("Length of the largest substring without reapeting characters:%d\n",maxlen);
+     printf("Larest substrig without repeating characters:");
+    for(i=startindex;i<startindex+maxlen;i++)
+    {
+        printf("%c",str[i]);
+    }
+    return 0;
+    
+}```
