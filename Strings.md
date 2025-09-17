@@ -1533,7 +1533,8 @@ int main()
     }
     return 0;
     
-}```
+}
+```
 ##55.Write a program to check if the given string’s characters can be rearranged to form a palindrome.
 ```c
 #include<stdio.h>
@@ -1571,5 +1572,6 @@ int main()
     return 0;
     
     
-}```
+}
+```
 
