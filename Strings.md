@@ -1534,3 +1534,42 @@ int main()
     return 0;
     
 }```
+##55.Write a program to check if the given string’s characters can be rearranged to form a palindrome.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[1000];
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int i,freq[256]={0},odd=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(isalpha(str[i]))
+        {
+            freq[tolower(str[i])]++;
+        }
+    }
+    for(i=0;i<256;i++)
+    {
+        if(freq[i]%2!=0)
+        {
+            odd++;
+        }
+    }
+    if(odd<=1)
+    {
+        printf("Yes, it can be rearranged into a palindrome.\n");
+    }
+    else
+    {
+        printf("No, it cannot be rearranged into a palindrome.\n");
+    }
+    return 0;
+    
+    
+}```
+
