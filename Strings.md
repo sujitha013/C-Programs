@@ -1607,4 +1607,44 @@ int main()
     return 0;
 }
 ```
+##57.Write a C program to expand a compressed string where each letter is followed by a number that represents how many times the letter should be repeated.
+```
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[100],ch;
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int i=0,count,j;
+    while(str[i]!='\0')
+    {
+        if(isalpha(str[i]))
+        {
+            ch=str[i];
+            i++;
+            if(!isdigit(str[i]))
+            {
+                printf("%c",ch);
+            }
+        }
+      else if(isdigit(str[i]))
+      {
+          int count=0;
+          while(isdigit(str[i]))
+          {
+              count=count*10+(str[i]-'0');
+              i++;
+          }
+          for(j=0;j<count;j++)
+          {
+              printf("%c",ch);
+          }
+       }
+    }
+    return 0;
+}
+```
 
