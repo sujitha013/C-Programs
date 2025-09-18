@@ -1574,4 +1574,37 @@ int main()
     
 }
 ```
+##56.A string is a Pangram if it contains every letter of the English alphabet at least once.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[100],str2[100];
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    strcpy(str2,str);
+    int i,freq[26]={0};
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(isalpha(str[i]))
+        {
+            str[i]=tolower(str[i]);
+            freq[str[i]-'a']++;
+        }
+    }
+    for(i=0;i<26;i++)
+    {
+        if(freq[i]==0)
+        {
+            printf("The string  \"%s\"  is not a panagram.\n",str2);
+            return 0;
+        }
+    }
+    printf("The string  \"%s\"   is a panagram.\n",str2);
+    return 0;
+}
+```
 
