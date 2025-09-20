@@ -57,3 +57,46 @@ int main()
     
 }
 ```
+##3.Write a program in C to write multiple lines to a text file.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+    FILE*fp=NULL;
+    char str[1000];
+    int i,n;
+    fp=fopen("test.txt","w");
+    if(fp==NULL)
+    {
+        printf("File could not be created\n");
+        exit(1);
+    }
+    printf("Input the number of lines to be written:");
+    scanf("%d",&n);
+    getchar();
+    printf("The lines are:\n");
+    for(i=0;i<n;i++)
+    {
+        fgets(str,sizeof(str),stdin);
+        fputs(str,fp);
+    }
+    fclose(fp);
+    fp=fopen("test.txt","r");
+    if(fp==NULL)
+    {
+        printf("File could not be opened.\n");
+        exit(1);
+    }
+     printf("\nThe content of the file test.txt is:\n");
+    while(fgets(str,sizeof(str),fp)!=NULL)
+    {
+        printf("%s",str);
+    }
+   
+    
+    fclose(fp);
+    
+}
+```
