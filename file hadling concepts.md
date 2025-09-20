@@ -26,3 +26,34 @@ int main()
     
 }
 ```
+##2. Read Existing File
+Write a program in C to read an existing file.
+Test Data :
+Input the file name to be opened : test.txt
+Expected Output :
+The content of the file test.txt is  :                                                                       
+This is the content of the file test.txt.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+    FILE *fp=NULL;
+    char str[1000];
+    fp=fopen("test.txt","r");
+    if(fp==NULL)
+    {
+        printf("File could not be opened\n");
+        exit(1);
+    }
+   
+    printf("The content of the file test.txt is :\n");
+    while(fgets(str,sizeof(str),fp)!=NULL)
+    {
+    printf("%s",str);
+    }
+    fclose(fp);
+    
+}
+```
