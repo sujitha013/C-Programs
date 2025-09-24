@@ -1612,3 +1612,34 @@ int main()
     return 0;
 }
 ```
+##62.Find the GCD and LCM of two numbers.
+```c
+#include<stdio.h>
+int main()
+ {
+ int n1,n2,num,i,gcd=0;
+ printf("Enter numbers n1 and n2:");
+ scanf("%d%d",&n1,&n2);
+ if(n1>n2)
+ {
+num=n1;
+ }
+ else
+ {
+num=n2;
+ }
+ for(i=1;i<=num;i++)
+ {
+ if(n1%i==0&&n2%i==0)
+ {
+if(i>gcd)
+ {
+gcd=i;
+}
+ }
+ }
+ printf("Greatest common divisor:%d\n",gcd);
+printf("Least common multiple:%d\n",n1*n2/gcd);
+ return 0;
+ }
+```
