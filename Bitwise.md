@@ -96,5 +96,29 @@ int main()
     return 0;
 }
 ```
-##5.
+##5.Swap even-positioned bits with odd-positioned bits of a given number.
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i,even,odd;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    printf("Before swapped:");
+    for(i=31;i>=0;i--)
+    {
+        printf("%d",(n>>i)&1);
+    }
+    printf("\n");
+    even=(n&0xAAAAAAAA);
+    odd=(n&0x55555555);
+    int result=(even>>1)|(odd<<1);
+    printf("After swapped:");
+    for(i=31;i>=0;i--)
+    {
+        printf("%d",(result>>i)&1);
+    }
+    return 0;
+}
+```
 
