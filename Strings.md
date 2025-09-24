@@ -1647,4 +1647,51 @@ int main()
     return 0;
 }
 ```
+##58.Check if a given string is a pangrammatic lipogram (all letters except one are present).
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[100];
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int i,freq[26]={0},count=0,j;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(isalpha(str[i]))
+        {
+        str[i]=tolower(str[i]);
+        freq[str[i]-'a']++;
+        }
+    }
+    for(i=0;i<26;i++)
+    {
+        if(freq[i]!=0)
+        {
+            count++;
+        }
+        else
+        {
+          j=i;  
+        }
+    }
+    if(count==26)
+    {
+        printf("Pangram!\n");
+    }
+    else if(count==25)
+    {
+    printf("Pangrammatic Lipogram! Missing letter: %c\n", j + 'a');
+    }
+    else
+    {
+        printf("Not Pangrammatic Lipogram!\n");
+    }
+    return 0;
+}
+```
+
 
