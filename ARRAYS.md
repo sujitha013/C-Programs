@@ -2055,3 +2055,37 @@ int main()
     return 0;
 }
 ```
+##59.Find the first element in the array that repeats.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,j,size,flag;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<size;i++)
+    {
+        flag=0;
+        for(j=i+1;j<size;j++)
+        {
+            if(a[j]==a[i])
+            {
+               flag=1;
+               break;
+            }
+        }
+        if(flag)
+        {
+            printf("First repeating element= %d",a[i]);
+            return 0;
+        }
+    }
+    printf("No repeating element.\n");
+    return 0;
+}
+```
