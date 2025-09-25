@@ -204,6 +204,33 @@ int main()
     return 0;
 }
 ```
+##9.Write a C program to find the position of the lowest set bit (rightmost 1) in the binary representation of a given integer.
+```c
+#include<stdio.h>
+int main()
+{
+    int n,bit,j,i;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    printf("Binary from of a number:");
+    for(i=31;i>=0;i--)
+    {
+        printf("%d",(n>>i)&1);
+    }
+    for(i=0;i<32;i++)
+    {
+      bit=(n>>i)&1;
+      if(bit==1)
+      {
+          j=i;
+          break;
+      }
+      
+    }
+    printf("\nthe lowestbit position set bit=%d",j);
+}
+```
+
 
 
 
