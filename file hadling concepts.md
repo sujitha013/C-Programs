@@ -105,7 +105,7 @@ int main()
     Total number of words
     Total number of lines
     ```c
-    #include<stdio.h>
+#include<stdio.h>
 #include<string.h>
 #include<ctype.h>
 #include<stdlib.h>
