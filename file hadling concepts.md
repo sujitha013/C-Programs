@@ -100,3 +100,50 @@ int main()
     
 }
 ```
+##4.Write a C program to read a file and count:
+    Total number of characters
+    Total number of words
+    Total number of lines
+    ```c
+    #include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+#include<stdlib.h>
+int main()
+{
+    FILE*fp=NULL;
+    char ch;
+    int character=0,line=0,words=0;
+    int inword=0;
+    fp=fopen("sample.txt","r");
+    if(fp==NULL)
+    {
+        printf("File could not be created.\n");
+        exit(1);
+    }
+    while((ch=getc(fp))!=EOF)
+    {
+       character++;
+       if(ch=='\n')
+       {
+           line++;
+       }
+       if(isspace(ch))
+       {
+           inword=0;
+       }
+       else if(inword==0)
+       {
+           inword=1;
+           words++;
+       }
+       
+    }
+    if(character>0&&ch!='\n')
+    {
+        line++;
+    }
+    printf("Characters=%d\nwords=%d\nlines=%d",character,words,line);
+    fclose(fp);
+}
+```
