@@ -181,6 +181,29 @@ int main()
     return 0;
 }
 ```
+##8.Toggle all bits of a given number (within 8 bits).
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i,bit;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    bit=n^0xFF;
+    for(i=7;i>=0;i--)
+    {
+        printf("%d",(n>>i)&1);
+    }
+    printf("->%d",n);
+    printf("\n");
+    for(i=7;i>=0;i--)
+    {
+        printf("%d",(bit>>i)&1);
+    }
+    printf("->%d",bit);
+    return 0;
+}
+```
 
 
 
