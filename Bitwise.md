@@ -121,4 +121,66 @@ int main()
     return 0;
 }
 ```
+##6.Given a number, clear all even-positioned bits.
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i,bit;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    bit=n;
+    for(i=31;i>=0;i--)
+    {
+        printf("%d",(n>>i)&1);
+    }
+    printf("->%d",n);
+    for(i=31;i>=0;i--)
+    {
+        if(i%2==0)
+        {
+           bit=bit&(~(1<<i)); 
+        }
+    }
+    printf("\n");
+    for(i=31;i>=0;i--)
+    {
+        printf("%d",(bit>>i)&1);
+    }
+    printf("->%d",bit);
+    return 0;
+}
+```
+##7.Given a number, set all odd-positioned bits.
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i,bit;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    bit=n;
+    for(i=31;i>=0;i--)
+    {
+        printf("%d",(n>>i)&1);
+    }
+    printf("->%d",n);
+    for(i=31;i>=0;i--)
+    {
+        if(i%2==0)
+        {
+           bit=bit|(1<<i); 
+        }
+    }
+    printf("\n");
+    for(i=31;i>=0;i--)
+    {
+        printf("%d",(bit>>i)&1);
+    }
+    printf("->%d",bit);
+    return 0;
+}
+```
+
+
 
