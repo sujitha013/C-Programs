@@ -147,3 +147,35 @@ int main()
     fclose(fp);
 }
 ```
+##5.Write a C program to copy the content of one file into another file.
+```c
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    FILE*src=NULL,*dst=NULL;
+    int ch;
+    src=fopen("sujitha.txt","r");
+    if(src==NULL)
+    {
+        printf(" Source File can not be opened.\n");
+        exit(1);
+    }
+    dst=fopen("geetha.txt","w");
+    if(dst==NULL)
+    {
+       printf("Destination File could not be created.\n"); 
+       fclose(src);
+       exit(1);
+    }
+   while ((ch = fgetc(src)) != EOF)
+    {
+        fputc(ch,dst);
+    }
+    printf("File copied successfully.\n");
+    fclose(src);
+    fclose(dst);
+    return 0;
+}
+```
+
