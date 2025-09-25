@@ -100,11 +100,8 @@ int main()
     
 }
 ```
-##4.Write a C program to read a file and count:
-    Total number of characters
-    Total number of words
-    Total number of lines
-    ```c
+##4.Write a C program to read a file and count:Total number of charactersTotal number of wordsTotal number of lines
+```c
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
