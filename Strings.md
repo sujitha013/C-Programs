@@ -1693,5 +1693,57 @@ int main()
     return 0;
 }
 ```
+##59.Take a string containing letters and digits. Rearrange it so that alphabets and digits appear alternately.If impossible, print “Rearrangement impossible”.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+#include<ctype.h>
+#include<stdlib.h>
+int main()
+{
+    char str[100],alp[100],dig[100],result[100];
+    printf("Enter string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int i,a=0,d=0,k=0,j=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(isalpha(str[i]))
+        {
+            alp[k++]=str[i];
+            a++;
+        }
+        else if(isdigit(str[i]))
+        {
+            dig[j++]=str[i];
+            d++;
+        }
+    }
+    if(abs(a-d)>1)
+    {
+        printf("Rearrange is impossibile.\n");
+        return 0;
+    }
+    int ai=0,di=0,ri=0;
+    int startalp=(a>=d)?1:0;
+    while((ai<a)||(di<d))
+    {
+        if(startalp&&ai<a)
+        {
+            result[ri++]=alp[ai++];
+        }
+        else if(!startalp&&di<d)
+        {
+            result[ri++]=dig[di++];
+        }
+        startalp=!startalp;
+    }
+    result[ri]='\0';
+    printf("Rearranged string %s\n",result);
+    return 0;
+    
+}
+```
 
 
