@@ -175,4 +175,55 @@ int main()
     return 0;
 }
 ```
-
+##6.Read a file words.txt.Count frequency of each word in the file.Print words and their count in descending order of frequency.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+#include<stdlib.h>
+int main()
+{
+    FILE*fp=NULL;
+    char str[1000],str1[100][100];
+    int k=0,ch,j=0,i,l,count;
+    fp=fopen("sample.txt","r");
+    if(fp==NULL)
+    {
+        printf("File can not be opened.\n");
+        exit(1);
+    }
+    while((ch=fgetc(fp))!=EOF&&k<sizeof(str)-1)
+    {
+        
+        str[k++]=tolower((char)ch);
+    }
+    str[k]='\0';
+    
+    char *token=strtok(str," ,.!?\n\t");
+    while(token!=NULL)
+    {
+        strcpy(str1[j],token);
+        j++;
+        token=strtok(NULL," ,.!?\n\t");
+    }
+    for(i=0;i<j;i++)
+    {
+        count=1;
+        if(strcmp(str1[i],"0")==0)
+        {
+            continue;
+        }
+        for(l=i+1;l<j;l++)
+        {
+            if(strcmp(str1[i],str1[l])==0)
+            {
+                count++;
+                strcpy(str1[l],"0");
+            }
+        }
+        printf("%s->%d\n",str1[i],count);
+    }
+    fclose(fp);
+    return 0;
+}
+```
