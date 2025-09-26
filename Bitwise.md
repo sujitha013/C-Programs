@@ -230,6 +230,44 @@ int main()
     printf("\nthe lowestbit position set bit=%d",j);
 }
 ```
+##10.Take an array of integers.For each element, print the number of 1’s in its binary representation.Also, find the integer with maximum set bits.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,size,count,j,freq[100],k=0,max=0,p;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<size;i++)
+    {
+        count=0;
+        for(j=31;j>=0;j--)
+        {
+            if(((a[i]>>j)&1)==1)
+            {
+                count++;
+            }
+        }
+        freq[k++]=count;
+    }
+    for(i=0;i<size;i++)
+    {
+        if(freq[i]>max)
+        {
+            max=freq[i];
+            p=a[i];
+            
+        }
+        printf("%d->%d set bits\n",a[i],freq[i]);
+    }
+    printf("Number with maximum set bits=%d",p);
+}
+```
 
 
 
