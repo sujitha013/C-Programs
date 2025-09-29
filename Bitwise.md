@@ -268,6 +268,39 @@ int main()
     printf("Number with maximum set bits=%d",p);
 }
 ```
+##11.Given an array of integers, print all numbers that have an even number of set bits in their binary representation.
+```c
+#include<stdio.h>
+int main()
+{
+    int size,a[100],i,count,bit,j;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("Number with Even set bits:");
+    for(i=0;i<size;i++)
+    {
+        count=0;
+        for(j=31;j>=0;j--)
+        {
+            bit=((a[i]>>j)&1);
+            if(bit==1)
+            {
+                count++;
+            }
+        }
+        if(count%2==0)
+        {
+            printf("%d ",a[i]);
+        }
+    }
+  return 0;  
+}
+```
 
 
 
