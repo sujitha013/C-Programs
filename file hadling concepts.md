@@ -227,3 +227,72 @@ int main()
     return 0;
 }
 ```
+##7.Read a file input.txt and print the word that occurs most frequently. Ignore case and punctuation.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+#include<stdlib.h>
+int main()
+{
+    FILE*fp=NULL;
+    char str[1000],str1[1000][1000];
+    int k=0,i,j,count,max=0,index=-1,freq[100];
+    fp=fopen("sample2.txt","r");
+    if(fp==NULL)
+    {
+        printf("File could not be opend.\n");
+        exit(1);
+    }
+    while(fgets(str,sizeof(str),fp)!=NULL)
+    {
+        for(i=0;str[i]!='\0';i++)
+        {
+            str[i]=tolower(str[i]);
+        }
+    }
+    char *token=strtok(str," ,.!?\n\t");
+    while(token!=NULL)
+    {
+      strcpy(str1[k],token);
+      freq[k]=-1;
+      k++;
+      token=strtok(NULL," ,.!?\n\t");
+    }
+    for(i=0;i<k;i++)
+    {
+        count=1;
+        for(j=i+1;j<k;j++)
+        {
+          if(strcmp(str1[i],str1[j])==0)
+          {
+              count++;
+              freq[j]=0;
+          }
+        }
+        if(freq[i]!=0)
+        {
+           freq[i]=count;
+        }
+    }
+    for(i=0;i<k;i++)
+    {
+        if(freq[i]>max)
+        {
+        max=freq[i];
+        index=i;
+        }
+    }
+    if(index!=-1)
+    {
+    printf("Most Frequent Word=%s\n",str1[index]);
+    printf("Frequency of word=%d\n",max);
+    }
+    else
+    {
+        printf("No words are found.\n");
+    }
+    fclose(fp);
+    return 0;
+}
+```
