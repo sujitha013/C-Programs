@@ -301,6 +301,44 @@ int main()
   return 0;  
 }
 ```
+##12.Read n integers and, for each number, print how many bits are set at even positions and odd positions in its binary representation.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],size,i,j,evenbits,oddbits,bit;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<size;i++)
+    {
+        evenbits=0;
+        oddbits=0;
+        bit=0;
+        for(j=31;j>=0;j--)
+        {
+            bit=(a[i]>>j)&1;
+            if(bit==1)
+            {
+                if(j%2==0)
+                {
+                    evenbits++;
+                }
+                else
+                {
+                    oddbits++;
+                }
+            }
+        }
+        printf("%d->Even bits:%d,Odd bits=%d\n",a[i],evenbits,oddbits);
+    }
+    return 0;
+}
+```
 
 
 
