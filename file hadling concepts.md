@@ -296,3 +296,49 @@ int main()
     return 0;
 }
 ```
+##8.Count vowels, consonants, digits, and special characters from a file
+```c
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+int main()
+{
+    FILE*fp=NULL;
+    char ch;
+    int v=0,c=0,d=0,sp=0;
+    fp=fopen("input.txt","r");
+    if(fp==NULL)
+    {
+        printf("File could not be created.\n");
+        exit(1);
+    }
+    while(!feof(fp))
+    {
+        ch=fgetc(fp);
+        if(isalpha(ch))
+        {
+            ch=tolower(ch);
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+            {
+                v++;
+            }
+            else
+            {
+                c++;
+            }
+        }
+        else if(isdigit(ch))
+        {
+            d++;
+        }
+        else if(ch!='\n'&&!isspace(ch))
+        {
+            sp++;
+        }
+    }
+    printf("Vowels=%d\nConsonants=%d\nDigits=%d\nSpecial character=%d",v,c,d,sp);
+    fclose(fp);
+    return 0;
+}
+```
