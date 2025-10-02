@@ -342,3 +342,52 @@ int main()
     return 0;
 }
 ```
+##9.Write a C program that reads a file input.txt and replaces every vowel with * and every digit with #. Save the modified content into a new file output.txt.
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    FILE*fp=NULL;
+    char str[1000],ch;
+    int k=0,i;
+    fp=fopen("input1.txt","r");
+    if(fp==NULL)
+    {
+        printf("File could not be opened.\n");
+        exit(1);
+    }
+    while((ch=fgetc(fp))!=EOF)
+    {
+       str[k++]=ch;
+    }
+    str[k]='\0';
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(isalpha(str[i]))
+        {
+            str[i]=tolower(str[i]);
+        }
+        if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u')
+        {
+            str[i]='*';
+        }
+        else if(isdigit(str[i]))
+        {
+            str[i]='#';
+        }
+    }
+    fclose(fp);
+    fp=fopen("input2.txt","w");
+    if(fp==NULL)
+    {
+        printf("File could not be created.\n");
+        exit(1);
+    }
+    fputs(str,fp);
+    fclose(fp);
+    return 0;
+}
+```
