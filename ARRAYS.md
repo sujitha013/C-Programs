@@ -2088,4 +2088,56 @@ int main()
     printf("No repeating element.\n");
     return 0;
 }
+##60.Write a C program that takes an unsorted array of integers and finds the longest consecutive subsequence.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100], size, temp, i, j, count=1, max=1, start=0, bestStart=0;
+    printf("Enter size: ");
+    scanf("%d",&size);
+
+    printf("Enter elements: ");
+    for(i=0;i<size;i++)
+        scanf("%d",&a[i]);
+
+    // Sort the array
+    for(i=0;i<size;i++)
+    {
+        for(j=i+1;j<size;j++)
+        {
+            if(a[j]<a[i])
+            {
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+
+    for(i=1;i<size;i++)
+    {
+        if(a[i]==a[i-1]+1)
+        {
+            count++;
+            if(count>max)
+            {
+                max=count;
+                bestStart=i-count+1;  // update starting index
+            }
+        }
+        else if(a[i]!=a[i-1])
+        {
+            count=1; // reset
+        }
+    }
+
+    printf("\nLongest consecutive sequence length = %d",max);
+    printf("\nLongest consecutive sequence: ");
+    for(i=bestStart;i<bestStart+max;i++)
+        printf("%d ",a[i]);
+
+    return 0;
+}
+```
 ```
