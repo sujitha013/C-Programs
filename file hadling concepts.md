@@ -391,3 +391,65 @@ int main()
     return 0;
 }
 ```
+##10.Write a C program to merge two files (file1.txt and file2.txt) into a new file (merged.txt) in alternate line order — i.e., first line from file1, then first line from file2, then second line from file1, etc.
+If one file has more lines than the other, append the remaining lines at the end.
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+void write_with_newline(FILE *out, char *line) {
+    fputs(line, out);
+    int len = strlen(line);
+    if (len == 0 || line[len - 1] != '\n') {
+        fputc('\n', out); // Add newline if missing
+    }
+}
+int main()
+{
+    FILE *fp1=NULL, *fp2=NULL, *fp3=NULL;
+    char str1[1000],str2[1000];
+    fp1=fopen("File1.txt","r");
+    if(fp1==NULL)
+    {
+        printf("File can not be opened.\n");
+        exit(1);
+    }
+    fp2=fopen("File2.txt","r");
+    if(fp2==NULL)
+    {
+        printf("File can not be opened.\n");
+        exit(1);
+    }
+    fp3=fopen("merge.txt","w");
+    if(fp3==NULL)
+    {
+        printf("File could not be created.\n");
+        
+        exit(1);
+    }
+    while(1)
+    {
+        if(fgets(str1,sizeof(str1),fp1)!=NULL)
+        {
+            write_with_newline(fp3,str1);
+        }
+        if(fgets(str2,sizeof(str2),fp2)!=NULL)
+        {
+           write_with_newline(fp3,str2); 
+        }
+        if(feof(fp1)&&feof(fp2))
+        {
+            break;
+        }
+    }
+    while (fgets(str1, sizeof(str1), fp1) != NULL)
+        write_with_newline(fp3,str1);
+
+    while (fgets(str2, sizeof(str2), fp2) != NULL)
+        write_with_newline(fp3,str2);
+    fclose(fp1);
+    fclose(fp2);
+    fclose(fp3);
+    return 0;
+}
+```
