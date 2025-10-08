@@ -1745,5 +1745,40 @@ int main()
     
 }
 ```
+##60.Write a program to check if two strings are rotations of each other.
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str[200], str1[100];
+    printf("Enter first string: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0'; 
+
+    printf("Enter second string: ");
+    fgets(str1, sizeof(str1), stdin);
+    str1[strcspn(str1, "\n")] = '\0'; 
+
+    int len1 = strlen(str);
+    int len2 = strlen(str1);
+
+    if (len1 != len2)
+    {
+        printf("No, '%s' is not a rotation of '%s'.\n", str1, str);
+        return 0;
+    }
+
+    strcat(str, str); 
+
+    if (strstr(str, str1))
+        printf("Yes, '%s' is a rotation of '%s'.\n", str1, str1);
+    else
+        printf("No, '%s' is not a rotation of '%s'.\n", str1, str1);
+
+    return 0;
+}
+```
 
 
