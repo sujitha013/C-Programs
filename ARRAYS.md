@@ -2088,6 +2088,7 @@ int main()
     printf("No repeating element.\n");
     return 0;
 }
+```
 ##60.Write a C program that takes an unsorted array of integers and finds the longest consecutive subsequence.
 ```c
 #include<stdio.h>
@@ -2140,4 +2141,33 @@ int main()
     return 0;
 }
 ```
+##61.Write a C program that finds the equilibrium index of an array.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,size,total=0,right_sum=0,left_sum=0;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<size;i++)
+    {
+        total=total+a[i];
+    }
+    for(i=0;i<size;i++)
+    {
+        right_sum=total-left_sum-a[i];
+        if(right_sum==left_ sum)
+        {
+            printf("Equilibrium index:%d\n",i);
+            break;
+        }
+        left_sum=left_sum+a[i];
+    }
+ return 0;   
+}
 ```
