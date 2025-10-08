@@ -339,6 +339,40 @@ int main()
     return 0;
 }
 ```
+##13.Write a program to find the position of the rightmost different bit between two integers.
+(Positions are counted from right, starting at 1.)
+```c
+#include<stdio.h>
+int main()
+{
+    int a,b,i,bit1,bit2,j;
+    printf("Enter a:");
+    scanf("%d",&a);
+    printf("Enter b:");
+    scanf("%d",&b);
+    for(i=31;i>=0;i--)
+    {
+        printf("%d",(a>>i)&1);
+    }
+    printf("\n");
+    for(i=31;i>=0;i--)
+    {
+        printf("%d",(b>>i)&1);
+    }
+    printf("\n");
+    for(i=0;i<32;i++)
+    {
+        bit1=(a>>i)&1;
+        bit2=(b>>i)&1;
+        if(bit1!=bit2)
+        {
+            printf("Rightmost different bit position:%d\n",i+1);
+            return 0;
+        }
+    }
+  return 0;  
+}
+```
 
 
 
