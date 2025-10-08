@@ -1608,7 +1608,7 @@ int main()
 }
 ```
 ##57.Write a C program to expand a compressed string where each letter is followed by a number that represents how many times the letter should be repeated.
-```
+```c
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
