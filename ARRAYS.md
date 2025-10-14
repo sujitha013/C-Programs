@@ -2171,3 +2171,44 @@ int main()
  return 0;   
 }
 ```
+##62.Write a C program to read an array of integers and store all positive elements along with their original indices in a 2D array.
+```c
+#include<stdio.h>
+int main()
+{
+    int a[100],i,size,rows=0,cols=2,j,k;
+    printf("Enter size:");
+    scanf("%d",&size);
+    printf("Enter elements:");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<size;i++)
+    {
+        if(a[i]>0)
+        {
+            rows++;
+        }
+    }
+    int b[rows][cols],r=0;
+    for(i=0;i<size;i++)
+    {
+        if(a[i]>0)
+        {
+            b[r][0]=i;
+            b[r][1]=a[i];
+            r++;
+        }
+    }
+    for(i=0;i<rows;i++)
+    {
+        printf("%d\t%d\n",b[i][0],b[i][1]);
+    }
+    
+    
+    
+   return 0; 
+}
+```
+
