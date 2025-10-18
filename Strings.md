@@ -1780,5 +1780,44 @@ int main()
     return 0;
 }
 ```
+##61.Write a C program to merge two strings alternately character by character. If one string is longer, append the remaining characters at the end.
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],str1[100],merg[1000];
+    printf("Enter first string:");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    printf("Enter second string:");
+    fgets(str1,sizeof(str1),stdin);
+    str1[strcspn(str1,"\n")]='\0';
+    int len1=strlen(str),len2=strlen(str1),l,k=0,i;
+    if(len1>len2) 
+    {
+      l=len1;  
+    }
+    else
+    {
+        l=len2;
+    }
+    for(i=0;i<l;i++)
+    {
+        if(i<len1)
+        {
+      merg[k++]=str[i];
+        }
+        if(i<len2)
+        {
+          merg[k++]=str1[i];  
+        }
+      
+    }
+    merg[k]='\0';
+    printf("Merged string:%s",merg);
+    return 0;
+}
+```
 
 
