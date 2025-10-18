@@ -373,6 +373,33 @@ int main()
   return 0;  
 }
 ```
+##14.Write a C program that accepts an integer and counts the number of set bits at odd positions (1-based indexing from the right).
+```c
+#include<stdio.h>
+int main()
+{
+    int n,i,bit,count=0;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    printf("Binary:");
+    for(i=7;i>=0;i--)
+    {
+        printf("%d",(n>>i)&1);
+    }
+    for(i=7;i>=0;i--)
+    {
+        bit=(n>>i)&1;
+        if(bit==1&&i%2!=0)
+        {
+            count++;
+        }
+    }
+    printf("\nNumber of set bits in odd positions:%d",count);
+    return 0;
+}
+```
+
+
 
 
 
